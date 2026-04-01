@@ -1,4 +1,4 @@
-/* --- 1. GLOBAL STYLES & RESETS --- */
+/* Global Styles & Resets */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- 2. NAVIGATION BAR --- */
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,11 +30,18 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo {
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 3px;
+.logo { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    letter-spacing: 3px; 
     color: #3b82f6; /* Brand Accent Blue */
+    text-decoration: none; /* Removes the underline */
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: #60a5fa; /* Slightly lighter blue when hovered */
+    transform: scale(1.05); /* Gives a tiny "pop" effect when touched */
 }
 
 .nav-links {
@@ -56,7 +63,7 @@ body {
     transition: color 0.3s ease;
 }
 
-/* INTERACTIVE: Sliding underline on hover */
+/* Interactive: Sliding underline on hover */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -76,7 +83,7 @@ body {
     width: 100%;
 }
 
-/* --- 3. HERO SECTION --- */
+/* Hero Section */
 .hero {
     height: 85vh;
     /* Dark overlay ensures text is readable over any image */
@@ -105,7 +112,7 @@ body {
     color: #cbd5e1;
 }
 
-/* --- 4. BUTTONS --- */
+/* Buttons */
 .btn {
     display: inline-block;
     background: #3b82f6;
@@ -119,7 +126,7 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* INTERACTIVE: Button lift and glow */
+/* Interactive: Button lift and glow */
 .btn:hover {
     background: #2563eb;
     transform: translateY(-3px);
@@ -130,7 +137,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* --- 5. SERVICES SECTION --- */
+/* Service Section */
 .services {
     padding: 6rem 8%;
     text-align: center;
@@ -169,7 +176,7 @@ body {
     cursor: pointer;
 }
 
-/* INTERACTIVE: Card elevation and border accent */
+/* Interactive: Card elevation and border accent */
 .service-card:hover {
     transform: translateY(-12px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -181,7 +188,7 @@ body {
     color: #0f172a;
 }
 
-/* --- 6. CONTACT SECTION --- */
+/* Contact Section */
 .contact {
     background: #f1f5f9;
     padding: 6rem 8%;
@@ -205,7 +212,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* INTERACTIVE: Input focus glow */
+/* Interactive: Input focus glow */
 .contact-form input:focus, 
 .contact-form textarea:focus {
     outline: none;
@@ -214,7 +221,7 @@ body {
     background: white;
 }
 
-/* --- 7. FOOTER --- */
+/* Footer */
 footer {
     background: #0f172a;
     color: #94a3b8;
@@ -223,7 +230,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- 8. RESPONSIVE DESIGN (MOBILE) --- */
+/* Responsive Design Mobile */
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem 5%;

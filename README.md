@@ -1,9 +1,9 @@
 # Roeh 111 | Dual-Spectrum Business Solutions
 
-**Live Site:** [Insert Your GitHub Pages URL Here]  
-**GitHub Repository:** [https://github.com/josephparis28-hue/Roeh-111] 
+**Live Site:** [https://josephparis28-hue.github.io/Roeh-111/]  
+**GitHub Repository:** [https://github.com/josephparis28-hue/Roeh-111]
 **Author:** Joseph Paris  
-**Project Status:** Week 03 - First Deployment Verified
+**Project Status:** _Updateed as of April 1, 2026_: Week 03 - First Deployment Verified  
 
 ---
 
@@ -11,15 +11,15 @@
 
 ## What is it?
 
-**Roeh 111** is a professional web platform designed to bridge the gap between high-end digital content strategy and essential non-digital physical maintenance. The site serves as a comprehensive service hub where clients can manage their online presence and their physical workspace needs through a single, unified interface.
+**Roeh 111** is a professional web platform designed to bridge the gap between high-end digital content strategy and essential non-digital physical maintenance. The site serves as a comprehensive service hub where clients can manage their online presence and their physical needs through a single, unified interface.
 
 ## Why does it matter?
 
-Modern businesses often suffer from a "disconnect" between their polished digital brand and their physical operational reality. **Roeh 111** solves this by providing a "Full-Spectrum" approach, ensuring that a company’s physical maintenance is as high-quality and reliable as its digital content.
+Modern businesses often suffer from a "disconnect" between their polished digital brand and their physical operational reality. **Roeh 111** solves this by providing a "Full-Spectrum" approach, ensuring high-quality and reliable services redendered exceed the expectations of clients.
 
 ## Who is it for?
 
-The intended audience is small-to-medium business owners in Texas who require a partner to handle both the technical complexities of the web and the logistical demands of physical facility maintenance.
+The intended audience is small-to-medium business owners in Texas who require a partner to handle both the technical complexities of the web and the logistical demands of physical facility maintenance. A branch of the business will be dedicated to those who have needs for outside of the business world.
 
 ---
 
@@ -27,16 +27,25 @@ The intended audience is small-to-medium business owners in Texas who require a 
 
 ## Project 01 (Week 05 Milestone)
 
-* **Responsive "Dual-Spectrum" Landing Page:** A hero section that immediately communicates the digital and physical value propositions.
+* **Responsive Landing Page:** A hero section that immediately communicates the digital and physical value propositions.
 * **Service Categories Grid:** Interactive cards detailing Digital Presence, Physical Maintenance, and Operational Continuity.
 * **Verified Deployment Pipeline:** A fully functional GitHub Pages site with continuous deployment enabled.
 * **Mobile-First Design:** Optimized CSS ensuring the service grid is readable and navigable on smartphones.
 
 ## Project 02 (Week 08 Final MVP)
 
-* **Lead-Capture Integration:** A live contact form using a third-party API (like Formspree) to route service requests to my inbox.
-* **Client Portal Prototype:** A UI section demonstrating how clients can track maintenance schedules and digital updates.
-* **Advanced UI Feedback:** CSS transitions and scroll-animations to create a premium, high-trust user experience.
+### Project 02 (Week 08 - Final MVP)
+
+* **Expanded Multi-Page Architecture:** Transition from a single-page landing site to a structured multi-page application including:
+
+  * `digital.html`: A dedicated deep-dive into content strategy and digital services.  
+  * `maintenance.html`: A specialized page for physical facility support and technical on-site maintenance.
+  * `about.html`: A detailed company mission and values page.
+
+* **Service-Specific Navigation:** Implementation of a dynamic Services dropdown menu in the header for direct access to other pages.
+* **Lead-Capture Integration:** A live contact form using a third-party API to route service requests directly to email.
+* **Interactive Maintenance Portal:** A prototype UI section where clients can view some servies render.
+* **Advanced UI Transitions:** Implementation of page fade animations and scroll-triggered effects to maintain brand continuity.
 
 ---
 
@@ -45,7 +54,7 @@ The intended audience is small-to-medium business owners in Texas who require a 
 * **Environment:** **Visual Studio Code** for local development.
 * **Front-end:** **HTML5** (Structure) and **CSS3** (Custom Responsive Styling).
 * **Version Control:** **GitHub Desktop** for managing local commits and remote pushes.
-* **Hosting/Deployment:** **GitHub Pages**, providing an automated pipeline from the `main` branch to the live web.
+* **Hosting/Deployment:** **GitHub Pages** providing an automated pipeline from the `main` branch to the live web.
 * **AI Collaboration:** **Gemini** used for architectural planning, CSS troubleshooting, and technical writing.
 
 ---
