@@ -14,9 +14,10 @@
     <a href="#home" class="logo">ROEH 111</a>
     <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li> 
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+    <button id="theme-toggle" class="theme-btn">🌓</button>
 </nav>
 
 <section id="services" class="services">
@@ -44,16 +45,30 @@
     <h3>Initiate Contact</h3>
         <p>Ready to move forward? Send us a message below.</p>
         <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="How can Roeh 111 assist you?" rows="5" required></textarea>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="How can Roeh 111 assist you?"></textarea>
             <button type="submit" class="btn">Send Message</button>
-    </form>
+        </form>
 </section>
 
 <footer>
     <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
 </footer>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        // Toggle the data-theme attribute on the body
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+        }
+    });
+</script>
 
 </body>
 </html>
