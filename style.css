@@ -42,7 +42,7 @@ body {
     width: 100%;
     /* This line applies the photo to the header */
     background: linear-gradient(var(--overlay), var(--overlay)), 
-                url('./assets/images/RoehBackground.jpg');
+                url('https://github.com/josephparis28-hue/Roeh-111/blob/main/assets/images/RoehBackground.jpg');
     background-size: cover;
     background-position: center 25%;
     position: sticky;
