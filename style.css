@@ -100,7 +100,7 @@ body {
     padding: 2rem 5%;
     /* Ensure image path is exact */
     background: linear-gradient(var(--overlay), var(--overlay)), 
-                url('assets/images/RoehBackground.jpg');
+            url('assets/images/RoehBackground.jpg');
     background-size: cover;
     background-position: center;
     color: white;
