@@ -40,19 +40,18 @@ body {
 /* --- 3. Navigation --- */
 .navbar {
     width: 100%;
-    /* Apply the image here so it spans the full width of the top */
+    /* Image applied here */
     background: linear-gradient(var(--overlay), var(--overlay)), 
                 url('./assets/images/RoehBackground.jpg');
     background-size: cover;
-    background-position: center 25%;
+    background-position: center;
     position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
-    /* Adjust height to show more/less of the photo */
-    min-height: 150px; 
-    border-bottom: 3px solid var(--accent-blue);
+    min-height: 140px;   /* Tall enough to see the photo */
+    border-bottom: 2px solid var(--accent-blue);
 }
 
 .navbar-container {
@@ -60,35 +59,8 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Keeps logo/links aligned with site content */
-    padding: 1rem 5%;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    margin: 0 auto; 
-}
-
-.nav-links li {
-    margin: 0 1.5rem;
-}
-
-.hero {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 5%;
-    background: var(--bg-color); /* Clean background for the body */
-    color: var(--text-color);
-}
-
-/* Ensure the logo and button have a consistent width or flex-basis 
-   to keep the center perfectly mathematical */
-.logo, .theme-btn {
-    flex: 0 0 auto; 
+    max-width: 1200px; 
+    padding: 0 5%;
 }
 
 .logo {
@@ -97,6 +69,7 @@ body {
     color: var(--accent-blue);
     text-decoration: none;
     letter-spacing: 2px;
+    flex: 0 0 auto;
 }
 
 .nav-links {
@@ -104,25 +77,28 @@ body {
     list-style: none;
     align-items: center;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: auto;   /* Keeps links centered in the bar */
 }
 
-.nav-links li { margin-left: 1rem; }
+.nav-links li { 
+    margin: 0 1.2rem; 
+}
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 .theme-btn {
     background: none;
     border: 1px solid var(--accent-blue);
     color: var(--accent-blue);
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 1rem;
+    flex: 0 0 auto;
     transition: var(--transition);
 }
 
@@ -131,30 +107,15 @@ body {
     color: white;
 }
 
-/* 1. The Header */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 5%;
-    background: var(--nav-bg); /* Dark solid background */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* 2. The Hero */
+/* --- 4. Hero Section --- */
 .hero {
-    min-height: 85vh; 
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem 5%;
-    background: linear-gradient(var(--overlay), var(--overlay)), 
-                url('./assets/images/RoehBackground.jpg');
-    background-size: cover;
-    background-position: top;
-    color: white;
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 .hero-content {
@@ -162,22 +123,16 @@ body {
     width: 100%;
     text-align: left;
     padding: 2rem;
-    /* Optional: Slight blur effect to make text pop */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
     border-left: 4px solid var(--accent-blue);
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     margin-bottom: 0.5rem;
-    line-height: 1.1;
 }
 
 .hero-content p {
     font-size: clamp(1rem, 3vw, 1.4rem);
-    margin-bottom: 2rem;
     font-weight: 300;
 }
 
@@ -205,14 +160,12 @@ body {
     padding: 3rem 2rem;
     border-radius: 15px;
     border: 1px solid var(--input-border);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: left;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease;
 }
 
 .service-card:hover { 
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* --- 6. Contact Section --- */
@@ -221,7 +174,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--bg-color);
 }
 
 .contact-form {
@@ -238,16 +190,8 @@ body {
     padding: 1.2rem;
     background-color: var(--input-bg);
     color: var(--text-color);
-    border: 2px solid var(--input-border);
+    border: 1px solid var(--input-border);
     border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color var(--transition);
-}
-
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--accent-blue);
 }
 
 .btn {
@@ -257,18 +201,12 @@ body {
     border: none;
     border-radius: 10px;
     font-weight: 700;
-    font-size: 1.1rem;
     cursor: pointer;
-    width: 100%;
-    transition: filter var(--transition);
 }
-
-.btn:hover { filter: brightness(1.1); }
 
 /* --- 7. Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 1.5rem; text-align: center; }
+    .navbar { min-height: auto; padding: 1rem; }
+    .navbar-container { flex-direction: column; }
     .nav-links { margin: 1.5rem 0; }
-    .nav-links li { margin: 0 0.75rem; }
-    .hero-content { padding: 1.5rem; }
 }
