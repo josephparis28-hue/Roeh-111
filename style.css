@@ -1,6 +1,5 @@
 /* --- 1. THEME VARIABLES --- */
 :root {
-    /* Light Mode */
     --bg-color: #f8fafc;
     --text-color: #1e293b;
     --card-bg: #ffffff;
@@ -8,12 +7,11 @@
     --input-border: #e2e8f0;
     --nav-bg: #0f172a;
     --accent-blue: #3b82f6;
-    --overlay: rgba(15, 23, 42, 0.7);
+    --overlay: rgba(15, 23, 42, 0.75);
     --transition: 0.3s ease;
 }
 
 [data-theme="dark"] {
-    /* Dark Mode */
     --bg-color: #0f172a;
     --text-color: #f1f5f9;
     --card-bg: #1e293b;
@@ -39,24 +37,16 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* --- 3. NAVIGATION --- */
+/* --- 3. NAVIGATION (Clean & Solid) --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 5%;
-    
-    /* The Background Image Fix */
-    background: linear-gradient(var(--overlay), var(--overlay)), 
-                url('assets/images/RoehBackground.jpg');
-    background-size: cover;
-    background-position: center;
-    
-    /* Keep it at the top */
+    padding: 1rem 5%;
+    background: var(--nav-bg);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--accent-blue);
 }
 
 .logo {
@@ -73,9 +63,7 @@ body {
     align-items: center;
 }
 
-.nav-links li {
-    margin-left: 1.5rem;
-}
+.nav-links li { margin-left: 1.5rem; }
 
 .nav-links a {
     color: white;
@@ -84,9 +72,7 @@ body {
     transition: var(--transition);
 }
 
-.nav-links a:hover {
-    color: var(--accent-blue);
-}
+.nav-links a:hover { color: var(--accent-blue); }
 
 .theme-btn {
     background: none;
@@ -98,7 +84,7 @@ body {
     margin-left: 1rem;
 }
 
-/* --- 4. HERO SECTION --- */
+/* --- 4. HERO SECTION (With Image) --- */
 .hero {
     min-height: 80vh;
     display: flex;
@@ -106,17 +92,23 @@ body {
     justify-content: center;
     text-align: center;
     padding: 2rem 5%;
-    /* Ensure image path is exact */
+    /* Case-sensitive path confirmed from your GitHub repo */
     background: linear-gradient(var(--overlay), var(--overlay)), 
-            url('');
+                url('assets/images/RoehBackground.jpg');
     background-size: cover;
     background-position: center;
     color: white;
 }
 
 .hero-content h1 {
-    font-size: clamp(2rem, 7vw, 4rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 /* --- 5. SERVICES GRID --- */
@@ -124,7 +116,6 @@ body {
     padding: 5rem 5%;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .service-grid {
@@ -136,21 +127,17 @@ body {
 
 .service-card {
     background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
+    padding: 2.5rem;
+    border-radius: 12px;
     border: 1px solid var(--input-border);
     transition: transform var(--transition);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-/* --- 6. CONTACT FORM --- */
-.contact {
-    padding: 5rem 5%;
     text-align: center;
 }
+
+.service-card:hover { transform: translateY(-10px); }
+
+/* --- 6. CONTACT FORM (Perfect Alignment) --- */
+.contact { padding: 5rem 5%; }
 
 .contact-form {
     width: 100%;
@@ -164,41 +151,28 @@ body {
 .contact-form input, 
 .contact-form textarea {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: var(--input-bg);
     color: var(--text-color);
     border: 1px solid var(--input-border);
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
 }
 
 .btn {
     background: var(--accent-blue);
     color: white;
-    padding: 1rem;
+    padding: 1.2rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     transition: opacity var(--transition);
 }
 
-.btn:hover {
-    opacity: 0.9;
-}
-
-/* --- 7. RESPONSIVE QUERIES --- */
+/* --- 7. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-    
-    .nav-links {
-        margin: 1rem 0;
-    }
-    
-    .theme-btn {
-        margin: 0;
-    }
+    .navbar { flex-direction: column; padding: 1.5rem; }
+    .nav-links { margin: 1rem 0; }
+    .theme-btn { margin-top: 0.5rem; }
 }
