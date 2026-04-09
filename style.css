@@ -7,7 +7,7 @@
     --input-border: #e2e8f0;
     --nav-bg: #0f172a;
     --accent-blue: #3b82f6;
-    --overlay: rgba(15, 23, 42, 0.75);
+    --overlay: rgba(15, 23, 42, 0.7);
     --transition: 0.3s ease;
 }
 
@@ -19,7 +19,7 @@
     --input-border: #334155;
     --nav-bg: #020617;
     --accent-blue: #60a5fa;
-    --overlay: rgba(0, 0, 0, 0.85);
+    --overlay: rgba(0, 0, 0, 0.8);
 }
 
 /* --- 2. CORE RESET --- */
@@ -37,7 +37,7 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* --- 3. NAVIGATION (Clean & Solid) --- */
+/* --- 3. NAVIGATION --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -69,83 +69,111 @@ body {
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: var(--transition);
 }
-
-.nav-links a:hover { color: var(--accent-blue); }
 
 .theme-btn {
     background: none;
     border: 1px solid var(--accent-blue);
     color: var(--accent-blue);
-    padding: 5px 10px;
+    padding: 5px 12px;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 1rem;
+    transition: var(--transition);
 }
 
-/* --- 4. HERO SECTION (With Image) --- */
+.theme-btn:hover {
+    background: var(--accent-blue);
+    color: white;
+}
+
+/* --- 4. HERO SECTION (Centered Container, Left Text) --- */
 .hero {
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 2rem 5%;
-    /* Case-sensitive path confirmed from your GitHub repo */
     background: linear-gradient(var(--overlay), var(--overlay)), 
-                url('assets/images/RoehBackground.jpg');
+                url('./assets/images/RoehBackground.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 25%;
     color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+    padding: 2rem;
+    /* Optional: Slight blur effect to make text pop */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    border-left: 4px solid var(--accent-blue);
 }
 
 .hero-content h1 {
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     margin-bottom: 0.5rem;
+    line-height: 1.1;
 }
 
 .hero-content p {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 1.4rem);
     margin-bottom: 2rem;
-    opacity: 0.9;
+    font-weight: 300;
 }
 
-/* --- 5. SERVICES GRID --- */
+/* --- 5. SERVICES SECTION --- */
 .services {
-    padding: 5rem 5%;
+    padding: 6rem 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.services h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
 }
 
 .service-card {
     background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 12px;
+    padding: 3rem 2rem;
+    border-radius: 15px;
     border: 1px solid var(--input-border);
-    transition: transform var(--transition);
-    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.service-card:hover { transform: translateY(-10px); }
+.service-card:hover { 
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
 
-/* --- 6. CONTACT FORM (Perfect Alignment) --- */
-.contact { padding: 5rem 5%; }
+/* --- 6. CONTACT SECTION (Centered & Aligned) --- */
+.contact {
+    padding: 6rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg-color);
+}
 
 .contact-form {
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 650px;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .contact-form input, 
@@ -154,9 +182,16 @@ body {
     padding: 1.2rem;
     background-color: var(--input-bg);
     color: var(--text-color);
-    border: 1px solid var(--input-border);
-    border-radius: 8px;
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
     font-size: 1rem;
+    transition: border-color var(--transition);
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
 }
 
 .btn {
@@ -164,15 +199,20 @@ body {
     color: white;
     padding: 1.2rem;
     border: none;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: opacity var(--transition);
+    width: 100%;
+    transition: filter var(--transition);
 }
+
+.btn:hover { filter: brightness(1.1); }
 
 /* --- 7. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 1.5rem; }
-    .nav-links { margin: 1rem 0; }
-    .theme-btn { margin-top: 0.5rem; }
+    .navbar { flex-direction: column; padding: 1.5rem; text-align: center; }
+    .nav-links { margin: 1.5rem 0; }
+    .nav-links li { margin: 0 0.75rem; }
+    .hero-content { padding: 1.5rem; }
 }
