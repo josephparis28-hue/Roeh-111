@@ -1,4 +1,4 @@
-/* --- 1. THEME VARIABLES --- */
+/* --- 1. Theme Variables --- */
 :root {
     --bg-color: #f8fafc;
     --text-color: #1e293b;
@@ -22,7 +22,7 @@
     --overlay: rgba(0, 0, 0, 0.8);
 }
 
-/* --- 2. CORE RESET --- */
+/* --- 2. Core Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -37,28 +37,52 @@ body {
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* --- 3. NAVIGATION --- */
+/* --- 3. Navigation --- */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Keeps logo left and button right */
-    padding: 1rem 5%;
-    background: var(--nav-bg);
+    width: 100%;
+    /* Apply the image here so it spans the full width of the top */
+    background: linear-gradient(var(--overlay), var(--overlay)), 
+                url('./assets/images/RoehBackground.jpg');
+    background-size: cover;
+    background-position: center 25%;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    /* Adjust height to show more/less of the photo */
+    min-height: 150px; 
+    border-bottom: 3px solid var(--accent-blue);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Keeps logo/links aligned with site content */
+    padding: 1rem 5%;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     align-items: center;
-    /* Pushes the links to the middle of the available space */
     margin: 0 auto; 
 }
 
 .nav-links li {
-    margin: 0 1rem; /* Even spacing on both sides of each link */
+    margin: 0 1.5rem;
+}
+
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5%;
+    background: var(--bg-color); /* Clean background for the body */
+    color: var(--text-color);
 }
 
 /* Ensure the logo and button have a consistent width or flex-basis 
@@ -79,9 +103,11 @@ body {
     display: flex;
     list-style: none;
     align-items: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.nav-links li { margin-left: 1.5rem; }
+.nav-links li { margin-left: 1rem; }
 
 .nav-links a {
     color: white;
@@ -105,7 +131,7 @@ body {
     color: white;
 }
 
-/* 1. THE HEADER (Keep this solid for readability) */
+/* 1. The Header */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -117,7 +143,7 @@ body {
     z-index: 1000;
 }
 
-/* 2. THE HERO */
+/* 2. The Hero */
 .hero {
     min-height: 85vh; 
     display: flex;
@@ -155,7 +181,7 @@ body {
     font-weight: 300;
 }
 
-/* --- 5. SERVICES SECTION --- */
+/* --- 5. Service Section --- */
 .services {
     padding: 6rem 5%;
     max-width: 1200px;
@@ -189,7 +215,7 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* --- 6. CONTACT SECTION (Centered & Aligned) --- */
+/* --- 6. Contact Section --- */
 .contact {
     padding: 6rem 5%;
     display: flex;
@@ -239,7 +265,7 @@ body {
 
 .btn:hover { filter: brightness(1.1); }
 
-/* --- 7. MOBILE RESPONSIVENESS --- */
+/* --- 7. Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .navbar { flex-direction: column; padding: 1.5rem; text-align: center; }
     .nav-links { margin: 1.5rem 0; }
