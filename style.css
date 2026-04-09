@@ -40,13 +40,31 @@ body {
 /* --- 3. NAVIGATION --- */
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between; /* Keeps logo left and button right */
     padding: 1rem 5%;
     background: var(--nav-bg);
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    /* Pushes the links to the middle of the available space */
+    margin: 0 auto; 
+}
+
+.nav-links li {
+    margin: 0 1rem; /* Even spacing on both sides of each link */
+}
+
+/* Ensure the logo and button have a consistent width or flex-basis 
+   to keep the center perfectly mathematical */
+.logo, .theme-btn {
+    flex: 0 0 auto; 
 }
 
 .logo {
@@ -87,9 +105,21 @@ body {
     color: white;
 }
 
-/* --- 4. HERO SECTION (Centered Container, Left Text) --- */
+/* 1. THE HEADER (Keep this solid for readability) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--nav-bg); /* Dark solid background */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* 2. THE HERO */
 .hero {
-    min-height: 85vh;
+    min-height: 85vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,7 +127,7 @@ body {
     background: linear-gradient(var(--overlay), var(--overlay)), 
                 url('./assets/images/RoehBackground.jpg');
     background-size: cover;
-    background-position: center 25%;
+    background-position: top;
     color: white;
 }
 
