@@ -44,11 +44,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: var(--nav-bg);
+    padding: 2rem 5%;
+    
+    /* The Background Image Fix */
+    background: linear-gradient(var(--overlay), var(--overlay)), 
+                url('assets/images/RoehBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    /* Keep it at the top */
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 2px solid var(--accent-blue);
 }
 
 .logo {
@@ -100,7 +108,7 @@ body {
     padding: 2rem 5%;
     /* Ensure image path is exact */
     background: linear-gradient(var(--overlay), var(--overlay)), 
-            url('assets/images/RoehBackground.jpg');
+            url('');
     background-size: cover;
     background-position: center;
     color: white;
