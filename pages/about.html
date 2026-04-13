@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Roeh 111</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="../index.html" class="logo">Roeh 111</a>
+        
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="../index.html#services">Services</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌓</button>
+    </div>
+</nav>
+
+<section class="services">
+    <h2>About Roeh 111</h2>
+    <div class="hero-content">
+        <h3>Our Vision</h3>
+        <p>
+            Roeh 111 was founded on the principles of restoration and excellence. 
+            Whether we are rebuilding a digital interface or restoring a 
+            physical structure, our goal is to provide professional solutions 
+            that honor the Word of God and serve the community of Pampa and beyond.
+        </p>
+        
+        <br>
+        
+        <h3>Joesph and Natalie Paris</h3>
+        <p>
+            With a background rooted in military service and social work, 
+            We understand the vital importance of trust, discipline, and integrity. 
+            Roeh 111 is the culmination of those values, 
+            bringing a veteran and social worker's work ethic to the 
+            fields of web development and home maintenance.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Theme toggle logic must be included on every page
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+        }
+    });
+</script>
+
+</body>
+</html>

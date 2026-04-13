@@ -1,26 +1,26 @@
 # Roeh 111 | Professional Solutions
 
-A responsive high-performance website built for **Roeh 111**, focusing on digital content and non-digital maintenance. 
-This project demonstrates advanced CSS layout techniques, including fluid typography, theme switching and professional branding.
+## 1. What Is This?
 
-## Live Site
+This project is a multi-page business and service website for **Roeh 111**, an organization specializing in digital web development, home repair and lifestyle consulting. The site functions as a professional hub where clients can explore service categories, learn about the brand’s mission and initiate direct communication through an integrated contact system. It is a modern web application designed with a focus on high-performance layout, adaptive themes and seamless cross-device compatibility.
 
-Check out the live deployment here: 
-[https://josephparis28-hue.github.io/Roeh-111/](https://josephparis28-hue.github.io/Roeh-111/)
+## 2. Why Does It Exist?
 
-## Key Features
+The project exists to provide a centralized professional online presence for our business ventures. This will transition from a technical student portfolio into a functional real-world service platform. It serves individuals and organizations looking for a reliable partner for both technical digital needs and physical restoration tasks. We have built this to solve the problem of fragmented communication services by providing a destination where professional excellence and Biblical principles intersect to serve a diverse client base.
 
-* **Invisible Personalization:** A custom-branded header featuring `RoehBackground.jpg` with an adaptive dark overlay for high readability.
-* **Dual-Mode Interface:** A fully functional dark/light mode toggle that adjusts the entire color palette, including cards and form fields.
-* **Boxed Navigation:** A centered container navbar that keeps the logo, menu and toggle aligned with the main content on all screen sizes.
-* **Professional Alignment:** All site elements are horizontally centered while maintaining left justified text for superior legibility.
-* **Responsive Architecture:** Uses CSS Flexbox and `clamp()` typography to ensure a seamless experience from mobile to ultra wide monitors.
+## 3. What Tools Did I Use?
 
-## Tech Stack
+* **Visual Studio Code:** This was my primary code editor because its extension ecosystem and integrated terminal allowed for an efficient and organized development environment.
+* **GitHub Desktop:** I used this tool for version control and repository management to ensure clear tracking of project iterations and reliable synchronization with my remote codebase.
+* **HTML5 & CSS3:** These foundational technologies were chosen to create a semantically correct and accessible structure that remains fast and performant across all screen sizes.
+* **JavaScript:** I utilized vanilla JavaScript to implement a custom dark-mode toggle, enabling a more accessible and user-controlled viewing experience.
+* **GitHub Pages:** This hosting platform was selected for its direct integration with my repository. This allows for seamless and automated deployment of the live project.
+* **Gemini (AI Assistant):** I used Gemini as a collaborative agent to help troubleshoot CSS pathing issues and brainstorm responsive layout strategies during implementation.
 
-* **HTML5:** Semantic structure for accessibility and SEO.
-* **CSS3:** Custom properties (variables), Flexbox, and advanced background positioning.
-* **JavaScript:** DOM manipulation for real-time theme switching.
+## 4. How to Visit Your Project
+
+You can visit the live, deployed version of the project at the following URL:
+**[https://josephparis28-hue.github.io/Roeh-111/](https://josephparis28-hue.github.io/Roeh-111/)**
 
 ## Project Structure
 

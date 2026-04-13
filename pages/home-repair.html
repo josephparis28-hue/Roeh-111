@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Repair & Restoration | Roeh 111</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="../index.html" class="logo">Roeh 111</a>
+        
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="digital.html">Digital</a></li>
+            <li><a href="home-repair.html">Home Repair</a></li>
+            <li><a href="life.html">Life</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌓</button>
+    </div>
+</nav>
+
+<section class="services">
+    <h2>Home Repair & Maintenance</h2>
+    <div class="hero-content">
+        <h3>Restoring Your Home</h3>
+        <p>Your home is your home. 
+            At Roeh 111, we treat every repair with the same 
+            integrity and attention to detail we apply 
+            to our own property. From minor fixes to essential maintenance, 
+            we provide Pampa residents with a dependable partner 
+            for home restoration.
+        </p>
+        
+        <br>
+        
+        <h3>Our Core Services</h3>
+        <p>
+            We handle the tasks that keep 
+            your home running smoothly and safely:
+        </p>
+        <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-color);">
+            <li><strong>Structural Restoration:</strong> Fixing what is broken and strengthening what remains.</li>
+            <li><strong>General Maintenance:</strong> Proactive care to prevent costly future repairs.</li>
+            <li><strong>Integrity-First Approach:</strong> Transparent pricing and honest assessments of every job.</li>
+        </ul>
+
+        <br>
+        <a href="../index.html#contact" class="btn" style="display: inline-block; width: auto; text-decoration: none; padding: 1rem 2rem;">Schedule a Repair</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
+</footer>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+        }
+    });
+</script>
+
+</body>
+</html>

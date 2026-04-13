@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solutions | Roeh 111</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="../index.html" class="logo">Roeh 111</a>
+        
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="digital.html">Services</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌓</button>
+    </div>
+</nav>
+
+<section class="services">
+    <h2>Digital Development</h2>
+    <div class="hero-content">
+        <h3>Web Development for The Kingdom</h3>
+        <p>
+            In a digital age, your online presence is your modern-day storefront. 
+            We specialize in creating high-performance, accessible
+             and semantically correct websites that reflect the quality of your mission.
+        </p>
+        
+        <br>
+        
+        <h3>Technical Expertise</h3>
+        <p>
+            Our development process utilizes industry-standard tools 
+            to ensure your site is robust and scalable:
+        </p>
+        <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-color);">
+            <li><strong>Frontend:</strong> HTML5, CSS3, and Modern JavaScript.</li>
+            <li><strong>Methodology:</strong> Responsive Design & Mobile-First Architecture.</li>
+            <li><strong>Clean Code:</strong> Semantic structure for better accessibility and SEO.</li>
+        </ul>
+
+        <br>
+        <a href="../index.html#contact" class="btn" style="display: inline-block; width: auto; text-decoration: none; padding: 1rem 2rem;">Start Your Project</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
+</footer>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+        }
+    });
+</script>
+
+</body>
+</html>

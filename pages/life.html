@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Consultation | Roeh 111</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="../index.html" class="logo">Roeh 111</a>
+        
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="digital.html">Digital</a></li>
+            <li><a href="home-repair.html">Repair</a></li>
+            <li><a href="life.html">Life</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="theme-btn">🌓</button>
+    </div>
+</nav>
+
+<section class="services">
+    <h2>Life & Spiritual Consultation</h2>
+    <div class="hero-content">
+        <h3>Synchronize Your Path</h3>
+        <p>
+            True success is not found in the world.
+            Everyone needs to do their best to present themselves to God as one approved,
+            a worker who has no need to be ashamed, rightly handling the word of truth 
+            At Roeh 111, we allow you to synchronize your daily walk with the Holy Spirit, 
+            providing a grounded Kingdom of Heaven perspective for life's many circumstances.
+        </p>
+        
+        <br>
+        
+        <h3>Our Approach</h3>
+        <p>We provide a space for reflection and guidance based on timeless principles:</p>
+        <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-color);">
+            <li><strong>Biblical Alignment:</strong> Teaching the truth of God's Words.</li>
+            <li><strong>Strategic Discipline:</strong> Applying God's Word with focus and trust for personal growth.</li>
+            <li><strong>Life Synchronization:</strong> Living in harmony with God's will and purpose.</li>
+        </ul>
+
+        <br>
+        <a href="../index.html#contact" class="btn" style="display: inline-block; width: auto; text-decoration: none; padding: 1rem 2rem;">Inquire About Consultation</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
+</footer>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+        }
+    });
+</script>
+
+</body>
+</html>
