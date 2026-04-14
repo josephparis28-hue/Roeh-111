@@ -19,7 +19,7 @@ This project was developed with two clear objectives:
 
 * **Visual Studio Code:** Used for all development due to its superior debugging tools and file management capabilities.
 * **Semantic HTML5 & CSS3:** Chosen to ensure the site is accessible to all users and maintains a professional, mobile-first design.
-* Vanilla JavaScript: Utilized an externalized script.js file to handle theme persistence via localStorage and interactive scroll behavior, ensuring consistent logic across all site pages while adhering to the principle of Separation of Concerns.
+* **Vanilla JavaScript:** Utilized an externalized script.js file to handle theme persistence via localStorage and interactive scroll behavior.
 * **GitHub Desktop & Pages:** Used for streamlined version control and reliable static site hosting.
 * **Formspree:** Integrated as a serverless backend to handle secure form submissions and lead generation.
 * **Gemini (AI Assistant):** Collaborated with AI to architect the theme-persistence logic, refine the project management scoping, and ensure documentation clarity.
