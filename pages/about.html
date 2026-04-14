@@ -3,63 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Roeh 111</title>
+    <title>About Roeh 111 | Trust & Restoration</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="navbar-container">
-        <a href="../index.html" class="logo">Roeh 111</a>
-        
+        <a href="../index.html" class="logo" style="color: white; text-decoration: none;">Roeh 111</a>
         <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="../index.html#services">Services</a></li>
-            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="digital.html">Digital</a></li>
+            <li><a href="home-repair.html">Repair</a></li>
+            <li><a href="life.html">Life</a></li>
         </ul>
-
-        <button id="theme-toggle" class="theme-btn">🌓</button>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">🌓</button>
     </div>
 </nav>
 
-<section class="services">
-    <h2>About Roeh 111</h2>
-    <div class="hero-content">
-        <h3>Our Vision</h3>
-        <p>
-            Roeh 111 was founded on the principles of restoration and excellence. 
-            Whether we are rebuilding a digital interface or restoring a 
-            physical structure, our goal is to provide professional solutions 
-            that honor the Word of God and serve the community of Pampa and beyond.
-        </p>
+<section style="max-width: 900px; margin: 4rem auto; padding: 0 1rem;">
+    <h1 style="color: var(--accent-blue); margin-bottom: 1rem;">The Roeh 111 Story</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 2.5rem; border-left: 4px solid var(--accent-blue); padding-left: 1.5rem; font-style: italic;">
+        "Excellence is not an act, but a habit—refined through service and grounded in True Biblical Faith."
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
         
-        <br>
-        
-        <h3>Joesph and Natalie Paris</h3>
-        <p>
-            With a background rooted in military service and social work, 
-            We understand the vital importance of trust, discipline, and integrity. 
-            Roeh 111 is the culmination of those values, 
-            bringing a veteran and social worker's work ethic to the 
-            fields of web development and home maintenance.
-        </p>
+        <div>
+            <h3>Our Vision</h3>
+            <p>
+                Roeh 111 is more than a service provider.
+                Our vision is to synchronize the digital, physical and spiritual needs of our clients. 
+                Whether we are debugging a complex application or repairing a foundation, 
+                we operate with a singular focus: <strong>To leave every situation better than we found it.</strong></p>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--accent-blue);">
+            <h3>A Foundation of Service</h3>
+            <p>
+                Founded by a military veteran and social worker who both serve the Kingdom of Heaven,
+                Roeh 111 brings the core values of the Kingdom of Heaven. 
+                Trust is the currency of any group. 
+                We bring that same level of accountability to Pampa, Texas. 
+                You are getting a partner who values trust, punctuality and excellence.
+            </p>
+        </div>
+
+        <div>
+            <h3>The Three Pillars of Roeh 111</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div style="padding: 1rem; border-bottom: 2px solid var(--accent-blue);">
+                    <h4>Digital Integrity</h4>
+                    <p>Building semantic, accessible and clean code that stands the test of time.</p>
+                </div>
+                <div style="padding: 1rem; border-bottom: 2px solid var(--accent-blue);">
+                    <h4>Physical Stewardship</h4>
+                    <p>Maintenance and restoration of homes with a focus on longevity and safety.</p>
+                </div>
+                <div style="padding: 1rem; border-bottom: 2px solid var(--accent-blue);">
+                    <h4>Kingdom of Heaven Alignment</h4>
+                    <p>Guidance and Truth rooted through Biblical Wisdom and Holy Spirit Leading.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <h3>Rooted in Pampa, Texas</h3>
+            <p>
+                We are enjoy serving the Pampa community. 
+                We believe Restoration is a Kingdom of Heaven value, 
+                and we are committed to providing top-tier services.</p>
+            <br>
+            <a href="../index.html#contact" class="btn" style="text-decoration: none; display: inline-block;">Connect With the Us</a>
+        </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
+    <p style="text-align: center; padding: 2rem; opacity: 0.7;">&copy; 2026 Roeh 111 | Built with Integrity</p>
 </footer>
 
 <script>
-    // Theme toggle logic must be included on every page
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-
+    
+    // Theme Persistence
+    if (localStorage.getItem('theme') === 'dark') { body.setAttribute('data-theme', 'dark'); }
+    
     themeToggle.addEventListener('click', () => {
         if (body.getAttribute('data-theme') === 'dark') {
             body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
         } else {
             body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
         }
     });
 </script>

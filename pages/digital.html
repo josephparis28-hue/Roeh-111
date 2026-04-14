@@ -10,59 +10,57 @@
 
 <nav class="navbar">
     <div class="navbar-container">
-        <a href="../index.html" class="logo">Roeh 111</a>
-        
+        <a href="../index.html" class="logo" style="color: white; text-decoration: none;">Roeh 111</a>
         <ul class="nav-links">
             <li><a href="about.html">About</a></li>
-            <li><a href="digital.html">Services</a></li>
-            <li><a href="../index.html#contact">Contact</a></li>
+            <li><a href="digital.html" class="active">Digital</a></li>
+            <li><a href="home-repair.html">Repair</a></li>
+            <li><a href="life.html">Life</a></li>
         </ul>
-
-        <button id="theme-toggle" class="theme-btn">🌓</button>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">🌓</button>
     </div>
 </nav>
 
-<section class="services">
-    <h2>Digital Development</h2>
-    <div class="hero-content">
-        <h3>Web Development for The Kingdom</h3>
+<section style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
+    <h1 style="color: var(--accent-blue);">Digital Development</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Web presence built for the Kingdom of Heaven.</p>
+    
+    <div style="background: var(--card-bg); padding: 2rem; border-radius: 8px;">
+        <h3>Technical Strategy</h3>
         <p>
-            In a digital age, your online presence is your modern-day storefront. 
-            We specialize in creating high-performance, accessible
-             and semantically correct websites that reflect the quality of your mission.
+            In the digital landscape, excellence is non-negotiable. 
+            We build responsive, high-performance websites using semantic 
+            HTML5, modern CSS3, and JavaScript. 
+            Our vision is to ensure your digital storefront reflects the integrity of your brand.
         </p>
         
-        <br>
-        
-        <h3>Technical Expertise</h3>
-        <p>
-            Our development process utilizes industry-standard tools 
-            to ensure your site is robust and scalable:
-        </p>
-        <ul style="margin-left: 2rem; margin-top: 1rem; color: var(--text-color);">
-            <li><strong>Frontend:</strong> HTML5, CSS3, and Modern JavaScript.</li>
-            <li><strong>Methodology:</strong> Responsive Design & Mobile-First Architecture.</li>
-            <li><strong>Clean Code:</strong> Semantic structure for better accessibility and SEO.</li>
+        <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
+            <li>Custom Web Architecture</li>
+            <li>Mobile-First Responsive Design</li>
+            <li>Accessibility & SEO Optimization</li>
         </ul>
-
-        <br>
-        <a href="../index.html#contact" class="btn" style="display: inline-block; width: auto; text-decoration: none; padding: 1rem 2rem;">Start Your Project</a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+        <a href="../index.html#contact" class="btn" style="text-decoration: none; display: inline-block;">Start Your Project</a>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
+    <p style="text-align: center; padding: 2rem; opacity: 0.7;">&copy; 2026 Roeh 111 | Pampa, Texas</p>
 </footer>
 
 <script>
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
-
+    if (localStorage.getItem('theme') === 'dark') { body.setAttribute('data-theme', 'dark'); }
     themeToggle.addEventListener('click', () => {
         if (body.getAttribute('data-theme') === 'dark') {
             body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
         } else {
             body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
         }
     });
 </script>

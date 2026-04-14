@@ -1,34 +1,40 @@
-# Roeh 111 | Professional Solutions
+# Roeh 111 | Digital & Restoration Solutions
+
+**A professional service platform dedicated to synchronization across the digital, physical, and spiritual realms.**
+
+---
 
 ## 1. What Is This?
 
-This project is a multi-page business and service website for **Roeh 111**, an organization specializing in digital web development, home repair and lifestyle consulting. The site functions as a professional hub where clients can explore service categories, learn about the brand’s mission and initiate direct communication through an integrated contact system. It is a modern web application designed with a focus on high-performance layout, adaptive themes and seamless cross-device compatibility.
+**Roeh 111** is a high-performance, multi-page business platform built to facilitate service render in web development, home maintenance and life consultation. The site serves as a digital storefront and portfolio that provides users with an accessible, semantic and responsive interface to explore restoration services. Built for the local community of Pampa, Texas it bridges the gap between traditional manual labor and modern digital solutions.
 
 ## 2. Why Does It Exist?
 
-The project exists to provide a centralized professional online presence for our business ventures. This will transition from a technical student portfolio into a functional real-world service platform. It serves individuals and organizations looking for a reliable partner for both technical digital needs and physical restoration tasks. We have built this to solve the problem of fragmented communication services by providing a destination where professional excellence and Biblical principles intersect to serve a diverse client base.
+This project was developed with two clear objectives:
+
+* **Local Problem Solving:** To provide people in Pampa, Texas with a reliable, transparent and modern way to book home repair and consultation services.
+* **Professional Identity:** To establish our online presence as a developer. This platform serves as a living portfolio to demonstrate proficiency in building functional user-centric web applications for potential clients.
 
 ## 3. What Tools Did I Use?
 
-* **Visual Studio Code:** This was my primary code editor because its extension ecosystem and integrated terminal allowed for an efficient and organized development environment.
-* **GitHub Desktop:** I used this tool for version control and repository management to ensure clear tracking of project iterations and reliable synchronization with my remote codebase.
-* **HTML5 & CSS3:** These foundational technologies were chosen to create a semantically correct and accessible structure that remains fast and performant across all screen sizes.
-* **JavaScript:** I utilized vanilla JavaScript to implement a custom dark-mode toggle, enabling a more accessible and user-controlled viewing experience.
-* **GitHub Pages:** This hosting platform was selected for its direct integration with my repository. This allows for seamless and automated deployment of the live project.
-* **Gemini (AI Assistant):** I used Gemini as a collaborative agent to help troubleshoot CSS pathing issues and brainstorm responsive layout strategies during implementation.
+* **Visual Studio Code:** Used for all development due to its superior debugging tools and file management capabilities.
+* **Semantic HTML5 & CSS3:** Chosen to ensure the site is accessible to all users and maintains a professional, mobile-first design.
+* **Vanilla JavaScript:** Utilized to build a custom theme-switching engine that leverages `localStorage` for persistent user preferences.
+* **GitHub Desktop & Pages:** Used for streamlined version control and reliable static site hosting.
+* **Formspree:** Integrated as a serverless backend to handle secure form submissions and lead generation.
+* **Gemini (AI Assistant):** Collaborated with AI to architect the theme-persistence logic, refine the project management scoping, and ensure documentation clarity.
 
-## 4. How to Visit Your Project
+## 4. Key Technical Features
 
-You can visit the live, deployed version of the project at the following URL:
-**[https://josephparis28-hue.github.io/Roeh-111/](https://josephparis28-hue.github.io/Roeh-111/)**
+* **The Ghost Protocol (Invisible Personalization):** The site automatically remembers if a user prefers Light or Dark mode across different pages and sessions.
+* **Responsive Multi-Page Logic:** Custom navigation architecture that maintains "Active" states, ensuring a seamless user experience.
+* **Secure Lead Handling:** Functional contact integration with custom redirect logic to a dedicated "Thank You" page.
 
-## Project Structure
+## 5. How to Visit the Project
 
-```text
-Roeh-111/
-├── assets/
-│   └── images/
-│       └── RoehBackground.jpg
-├── index.html
-├── style.css
-└── README.md
+Click the link below to view the live, fully deployed application:
+
+**[Launch Roeh 111 Live Site](https://josephparis28-hue.github.io/Roeh-111/)**
+
+---
+© 2026 Joseph Paris | Built with Integrity in Pampa, Texas

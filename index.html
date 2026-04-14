@@ -1,81 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roeh 111 | Professional Solutions for Everyone</title>
+    <title>Roeh 111 | Digital Restoration & Kingdom of Heaven Solutions</title>
+    <meta name="description" content="Professional digital development, home repair, and life consultation services in Pampa, Texas.">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <nav class="navbar">
     <div class="navbar-container">
-        <a href="#" class="logo">Roeh 111</a>
-        
+        <a href="index.html" class="logo" style="font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none;">Roeh 111</a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
             <li><a href="pages/about.html">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <button id="theme-toggle" class="theme-btn">🌓</button>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">🌓</button>
     </div>
 </nav>
 
-<section id="services" class="services">
-    <h2>Our Specialized Solutions</h2>
-    <div class="service-grid">
+<section id="services" style="max-width: 1200px; margin: 4rem auto; padding: 0 1rem;">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Our Solutions</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        
         <div class="service-card">
-            <div class="icon">🌐</div>
-            <h3>Digital:</h3>
-            <p>Web Development for The Kingdom of Heavan.</p>
-            <br>
-            <a href="pages/digital.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none;">Explore Digital Solutions →</a>
+            <h3>Digital</h3>
+            <p>Web development and content to furhter your goals.</p>
+            <a href="pages/digital.html" style="color: var(--accent-blue); text-decoration: none; font-weight: bold;">Learn More →</a>
         </div>
+
         <div class="service-card">
-            <div class="icon">🛠️</div>
-            <h3>Home Repair:</h3>
-            <p>Fix and Restore your home.</p>
-            <br>
-            <a href="pages/home-repair.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none;">View Restoration Services →</a>
+            <h3>Home Repair</h3>
+            <p>Reliable repair and maintenance services in Pampa, Texas.</p>
+            <a href="pages/home-repair.html" style="color: var(--accent-blue); text-decoration: none; font-weight: bold;">Learn More →</a>
         </div>
+
         <div class="service-card">
-            <div class="icon">🔄</div>
-            <h3>Life:</h3>
-            <p>Synchronize your mind with the Word of God.</p>
-            <br>
-            <a href="pages/life.html" style="color: var(--accent-blue); font-weight: bold; text-decoration: none;">Explore Life Solutions →</a>
+            <h3>Life</h3>
+            <p>Kingdom of Heaven Synchronization powered by the Holy Spirit.</p>
+            <a href="pages/life.html" style="color: var(--accent-blue); text-decoration: none; font-weight: bold;">Learn More →</a>
         </div>
+
     </div>
 </section>
 
-<section id="contact" class="contact">
-    <h3>Initiate Contact</h3>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="What can we do to assist you?"></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-</section>
+<section id="contact" style="max-width: 1200px; margin: 4rem auto; padding: 0 1rem; text-align: center;">
+    <h2>Get in Touch</h2>
+    <p>Let's discuss your restoration or digital project.</p>
+    
+    <form action="https://formspree.io/f/mvzdoyww" method="POST" class="contact-form">
+        <input type="hidden" name="_next" value="https://josephparis28-hue.github.io/Roeh-111/pages/thank-you.html">
+        
+        <input type="text" name="_gotcha" style="display:none">
 
-<footer>
-    <p>&copy; 2026 Roeh 111, All Rights Reserved.</p>
-</footer>
+        <div class="form-group">
+            <input type="text" name="full_name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+            <select name="service_interest" style="width: 100%; padding: 0.8rem; border-radius: 4px; background: var(--bg-color); color: var(--text-color); border: 1px solid #ddd;">
+                <option value="digital">Digital Development</option>
+                <option value="repair">Home Repair</option>
+                <option value="life">Life Consultation</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea name="message" placeholder="How can Roeh 111 serve you today?" rows="5" required></textarea>
+        </div>
+        
+        <input type="hidden" name="_subject" value="New Inquiry from Roeh 111">
+        
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
 
 <script>
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
+    // Load theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        body.setAttribute('data-theme', 'dark');
+    }
+
     themeToggle.addEventListener('click', () => {
-        // Toggle the data-theme attribute on the body
         if (body.getAttribute('data-theme') === 'dark') {
             body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
         } else {
             body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
         }
     });
 </script>
