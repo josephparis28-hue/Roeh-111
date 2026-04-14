@@ -128,3 +128,23 @@ input, textarea {
 .btn:active {
     transform: translateY(0); /* Returns it to the original position on click */
 }
+
+/* Custom Scrollbar Styling */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+    border-radius: 10px;
+    border: 2px solid var(--bg-color); /* Creates a 'floating' effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; /* Matches your button hover state */
+}
