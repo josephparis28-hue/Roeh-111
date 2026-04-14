@@ -83,23 +83,9 @@
     <p style="text-align: center; padding: 2rem; opacity: 0.7;">&copy; 2026 Roeh 111 | Built with Integrity</p>
 </footer>
 
-<script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    // Theme Persistence
-    if (localStorage.getItem('theme') === 'dark') { body.setAttribute('data-theme', 'dark'); }
-    
-    themeToggle.addEventListener('click', () => {
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'light');
-        } else {
-            body.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        }
-    });
-</script>
+<script src="script.js"></script>
+
+<button id="backToTop" class="back-to-top" title="Go to top">↑</button>
 
 </body>
 </html>
