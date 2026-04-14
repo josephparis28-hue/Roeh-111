@@ -6,7 +6,7 @@
 
 ## 1. What Is This?
 
-**Roeh 111** is a high-performance, multi-page business platform built to facilitate service render in web development, home maintenance and life consultation. The site serves as a digital storefront and portfolio that provides users with an accessible, semantic and responsive interface to explore restoration services. Built for the local community of Pampa, Texas it bridges the gap between traditional manual labor and modern digital solutions.
+**Roeh 111** is a high-performance, multi-page business platform built to facilitate service rendering in web development, home maintenance and life consultation. The site serves as a digital storefront and portfolio that provides users with an accessible, semantic and responsive interface to explore restoration services. Built for the local community of Pampa, Texas it bridges the gap between traditional manual labor and modern digital solutions.
 
 ## 2. Why Does It Exist?
 
