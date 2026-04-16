@@ -124,6 +124,19 @@ body {
     margin-top: 1rem;
 }
 
+.service-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth motion */
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Lifts the card up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Adds a deep shadow */
+}
+
 /*
     Form Styling
 */
@@ -160,6 +173,98 @@ input[type="text"], input[type="email"], select, textarea {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+}
+
+/*
+    Portfolio Cards
+*/
+.portfolio-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-tag {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* 
+    Before/After Slider
+*/
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: ew-resize;
+}
+
+.slider-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Initially hide the after image */
+    clip-path: inset(0 0 0 100%); 
+    transition: clip-path 0.6s ease-in-out;
+}
+
+.slider-container:hover .img-after {
+    /* Reveal the after image on hover */
+    clip-path: inset(0 0 0 0);
+}
+
+/*
+    Labels
+*/
+.label {
+    position: absolute;
+    bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.label-before { left: 20px; }
+.label-after { right: 20px; }
+
+/*
+    SEO Accessibility Check
+*/
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* 

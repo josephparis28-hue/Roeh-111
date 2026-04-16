@@ -1,55 +1,53 @@
 # Roeh 111 | Digital & Restoration Solutions
 
-**A professional service platform dedicated to synchronization across the digital, physical, and spiritual realms.**
+**A professional service platform dedicated to synchronization across the digital, physical and spiritual sectors in Pampa, Texas.**
 
 ---
 
-## 1. What Is This?
+## 1. Project Overview
 
-[cite_start]**Roeh 111** is a high-performance, multi-page business platform built to facilitate service rendering in web development, home maintenance, and life consultation. [cite_start]The site serves as a digital storefront and portfolio that provides users with an accessible, semantic, and responsive interface to explore restoration services. [cite_start]Built for the local community of Pampa, Texas, it bridges the gap between traditional manual labor and modern digital solutions.
+**Roeh 111** is a high-performance multi-page business platform designed for local services rendering in web development, home maintenance and life consultation. This platform serves as a living portfolio demonstrating proficiency in building functional user-centric web applications with a focus on structural integrity and transparent client communication.
 
-## 2. Why Does It Exist?
+## 2. Core Mission
 
-[cite_start]This project was developed with two clear objectives:
+* **Local Restoration:** Providing Pampa and Gray County with reliable home repair and maintenance services.
+* **Digital Excellence:** Building SEO-optimized, responsive websites for local businesses.
+* **Kingdom Solutions:** Offering consultation for alignment and synchronization powered by the Holy Spirit.
 
-* [cite_start]**Local Problem Solving:** To provide people in Pampa, Texas, with a reliable, transparent, and modern way to book home repair and consultation services.
-* [cite_start]**Professional Identity:** To establish an online presence as a developer. [cite_start]This platform serves as a living portfolio to demonstrate proficiency in building functional, user-centric web applications.
+## 3. Technical Stack & Tools
 
-## 3. What Tools Did I Use?
-
-* [cite_start]**Visual Studio Code:** Primary IDE for technical development and structural organization.
-* [cite_start]**Semantic HTML5 & CSS3:** Used to create a responsive hub with dynamic theme-aware branding and visual asset integration, including a centralized design system using CSS variables.
-* [cite_start]**Vanilla JavaScript:** Externalized logic in `script.js` to manage the "Ghost Protocol" and smooth navigation interactions.
-* [cite_start]**Formspree:** Backend handler for secure, serverless client communication.
-* [cite_start]**GitHub Desktop & Pages:** Managed version control and live deployment for the Pampa, Texas service region.
+* **Visual Studio Code:** Primary IDE for development and project management.
+* **Semantic HTML5 & CSS3:** Leveraged for a responsive hub featuring a centralized design system and CSS variables.
+* **Vanilla JavaScript:** Powers the "Ghost Protocol" for theme persistence and UI interactions.
+* **Formspree:** Backend handler for secure, serverless contact form submissions.
+* **GitHub Pages:** Managed deployment for the Pampa service region.
 
 ## 4. Key Technical Features
 
-* [cite_start]**The Ghost Protocol (Invisible Personalization):** The site automatically remembers if a user prefers Light or Dark mode across different pages and sessions using `localStorage` persistence.
-* **Balanced Navigation Architecture:** A custom Flexbox-based header that mathematically centers navigation links between the brand logo and the theme toggle for a symmetrical UI.
-* **Asset Optimization:** Implementation of a simplified asset naming convention (`brand-icon.png`) to ensure high availability and reliability across GitHub Pages' case-sensitive environment.
-* [cite_start]**Responsive Multi-Page Logic:** Custom navigation architecture that maintains "Active" states, ensuring a seamless user experience.
-* [cite_start]**Secure Lead Handling:** Functional contact integration with custom redirect logic to a dedicated "Thank You" page.
+* **Anti-Flash Theme Engine:** An optimized "Ghost Protocol" using inline header scripts to prevent white background flashes during page transitions in dark mode.
+* **Restoration Comparison Slider:** A CSS-driven "Before and After" interactive module that visually demonstrates home repair transformations.
+* **Local SEO Architecture:** Strategic integration of location-based keywords (Pampa, Gray County) and veteran-owned identifiers to enhance local discovery.
+* **Balanced Navigation UI:** A Flexbox-based header ensuring mathematical centering of navigation links between the brand logo and the theme toggle.
+* **Persistence Logic:** Use of `localStorage` to ensure the user's preferred visual theme is remembered across browsing sessions.
 
-## 5. How to Visit the Project
+## 5. Live Deployment
 
-Click the link below to view the live, fully deployed application:
+Visit the fully functional site here:  
+**[Roeh 111 Live Site](https://josephparis28-hue.github.io/Roeh-111/)**
 
-**[Launch Roeh 111 Live Site](https://josephparis28-hue.github.io/Roeh-111/)**
-
-## 6. Project Structure
+## 6. Project Directory
 
 ```plaintext
 Roeh-111/
 ├── assets/
-│   └── images/          # Site-wide visual assets, background images, and brand-icon.png
+│   └── images/          # Backgrounds and brand-icon (favicon.ico.png)
 ├── pages/
-│   ├── about.html       # Mission statement and veteran-led background
-│   ├── digital.html     # Web development and technical solutions
+│   ├── about.html       # Mission and veteran-led background
+│   ├── digital.html     # Web solutions and technical services
 │   ├── home-repair.html # Restoration and physical maintenance
-│   ├── life.html        # Kingdom of Heaven consultation
-│   └── thank-you.html   # Post-submission confirmation page
-├── index.html           # Main landing page and contact hub
-├── style.css            # Centralized design system with CSS variables
-├── script.js            # Externalized site-wide logic and theme persistence
-└── README.md            # Project documentation
+│   ├── life.html        # Kingdom consultation services
+│   └── thank-you.html   # Form submission confirmation
+├── index.html           # Main landing, portfolio, and contact hub
+├── style.css            # Centralized design system
+├── script.js            # UI logic and theme persistence
+└── README.md            # Verified project documentation
