@@ -1,17 +1,14 @@
-/*
-    Roeh 111 - Site-wide Logic
-    Includes: Theme Persistence & Back-to-Top Navigation
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-    // THEME TOGGLE
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const backToTopBtn = document.getElementById("backToTop");
 
+    // Initialize Theme
     if (localStorage.getItem('theme') === 'dark') {
         body.setAttribute('data-theme', 'dark');
     }
 
+    // Theme Switcher
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             if (body.getAttribute('data-theme') === 'dark') {
@@ -24,17 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // BACK TO TOP
-    const backToTopBtn = document.getElementById("backToTop");
+    // Scroll Logic
     if (backToTopBtn) {
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        window.onscroll = () => {
+            if (window.scrollY > 300) {
                 backToTopBtn.style.display = "block";
             } else {
                 backToTopBtn.style.display = "none";
             }
         };
-
         backToTopBtn.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });

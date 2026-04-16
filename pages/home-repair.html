@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Repair | Roeh 111</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico.png">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="navbar-container">
-        <a href="../index.html" class="logo" style="color: white; text-decoration: none;">Roeh 111</a>
+        <a href="../index.html" class="logo">
+            Roeh 111 
+            <img src="../assets/images/favicon.ico.png" alt="Roeh Icon" style="height: 24px; width: 24px;">
+        </a>
         <ul class="nav-links">
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html" class="active">About</a></li>
             <li><a href="digital.html">Digital</a></li>
-            <li><a href="home-repair.html" class="active">Repair</a></li>
+            <li><a href="home-repair.html">Repair</a></li>
             <li><a href="life.html">Life</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">🌓</button>
+        <div class="theme-btn-wrapper">
+            <button id="theme-toggle" class="theme-btn">🌓</button>
+        </div>
     </div>
 </nav>
 

@@ -1,52 +1,42 @@
 :root {
-    /* Global Variables */
     --accent-blue: #007bff;
     --transition-speed: 0.4s;
-    --overlay: rgba(0, 0, 0, 0.6);
-    --header-bg: url('https://josephparis28-hue.github.io/Roeh-111/assets/images/RoehBackground.jpg');
+    --overlay: rgba(0, 0, 0, 0.5);
+    --header-bg: url('assets/images/RoehBackground.jpg');
     
-    /* Light Mode Palette */
     --bg-color: #ffffff;
     --text-color: #333333;
     --card-bg: #f9f9f9;
 }
 
 [data-theme="dark"] {
-    /* Dark Mode Palette */
     --bg-color: #1a1a1a;
     --text-color: #f0f0f0;
     --card-bg: #2d2d2d;
-    --overlay: rgba(0, 0, 0, 0.8);
+    --overlay: rgba(0, 0, 0, 0.7);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Smooth transition for theme switching and interactions */
-    transition: background-color var(--transition-speed) ease, 
-                color var(--transition-speed) ease, 
-                border-color var(--transition-speed) ease,
-                transform 0.2s ease;
-}
-
-html {
-    scroll-behavior: smooth;
-    overflow-y: scroll; /* Prevents layout jump on page changes */
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif;
     line-height: 1.6;
 }
 
-/* Navbar with integrated background image */
+/*
+    Header & Navigation
+*/
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     padding: 2rem 1rem;
     color: white;
 }
@@ -55,120 +45,116 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    align-items: center; 
     justify-content: space-between;
+}
+
+.logo {
+    flex: 1; 
+    display: flex;
     align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo img {
+    height: 32px; /* Slightly larger for visibility */
+    width: 32px;
+    margin-left: 12px;
+    object-fit: contain;
+    display: inline-block;
 }
 
 .nav-links {
-    list-style: none;
+    flex: 2; 
     display: flex;
+    justify-content: center;
+    list-style: none;
     gap: 2rem;
 }
 
 .nav-links a {
-    color: white;
     text-decoration: none;
     font-weight: 500;
+    color: white;
 }
 
-/* Active Page Indicator */
-.nav-links a.active {
-    border-bottom: 2px solid var(--accent-blue);
-    color: var(--accent-blue);
+.theme-btn-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* Service Card Micro-interactions */
-.service-card {
-    background: var(--card-bg);
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/*
+    Form Styling
+*/
+#contact {
+    max-width: 800px;
+    margin: 4rem auto;
     padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+.form-group { margin-bottom: 1.5rem; }
 
-/* Form Styles */
-.contact-form {
-    max-width: 600px;
-    margin: 2rem auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-input, textarea {
+input[type="text"], input[type="email"], select, textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background: var(--bg-color);
+    background-color: var(--bg-color);
     color: var(--text-color);
+    font-size: 1rem;
+    font-family: inherit;
 }
 
 .btn {
-    background: var(--accent-blue);
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-blue);
     color: white;
-    padding: 1rem 2rem;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-    background-color: #0056b3; 
-    transform: translateY(-2px); /* Gives it a slight "lift" effect */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-.btn:active {
-    transform: translateY(0); /* Returns it to the original position on click */
-}
-
-/* Custom Scrollbar Styling */
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--accent-blue);
-    border-radius: 10px;
-    border: 2px solid var(--bg-color); /* Creates a 'floating' effect */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #0056b3; /* Matches your button hover state */
-}
-
-/* Back to Top Button */
+/*
+    Utilities
+*/
 .back-to-top {
-    display: none; /* JavaScript will change this to 'block' on scroll */
-    position: fixed; 
+    display: none;
+    position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 1000; 
+    z-index: 1000;
     border: none;
-    outline: none;
     background-color: var(--accent-blue);
     color: white;
-    cursor: pointer;
     padding: 15px;
     border-radius: 50%;
-    font-size: 18px;
+    cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s, background-color 0.3s;
 }
 
-.back-to-top:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: var(--accent-blue); border-radius: 10px; }
