@@ -1,280 +1,67 @@
-/* ========================================
-    1. CORE THEME & VARIABLES
-   ======================================== */
+/* --- Global Styles --- */
 :root {
     --accent-blue: #007bff;
-    --transition-speed: 0.4s;
-    --overlay: rgba(0, 0, 0, 0.5);
-    
-    /* Default Light Mode */
     --bg-color: #ffffff;
     --text-color: #333333;
     --card-bg: #f9f9f9;
+    --overlay: rgba(0, 0, 0, 0.5);
     --header-bg: url('assets/images/RoehBackground.jpg');
-    --about-hero-bg: url('assets/images/PampaSkyline.jpg');
 }
 
-/* Dark Mode Variables */
 html[data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #f0f0f0;
     --card-bg: #2d2d2d;
-    --overlay: rgba(0, 0, 0, 0.7);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; transition: background 0.3s; }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
-}
-
-/* ========================================
-    2. NAVIGATION (Mobile Centering Fix)
-   ======================================== */
+/* --- Navigation --- */
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
-    background-size: cover;
-    background-position: center;
-    padding: 2.5rem 1rem;
-    color: white;
+    background-size: cover; background-position: center; padding: 2.5rem 1rem; color: white;
 }
-
 .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;
 }
+.logo { display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.5rem; }
+.logo img { height: 40px; margin-left: 10px; }
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a { color: white; text-decoration: none; font-weight: 500; }
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.6rem;
-}
-
-.logo img {
-    height: 40px;
-    margin-left: 12px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--accent-blue);
-}
-
-.theme-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.6rem;
-}
-
-/* ========================================
-    3. BEFORE/AFTER SLIDER (Interaction Fix)
-   ======================================== */
+/* --- Slider Core Logic --- */
 .slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    margin: 4rem auto;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    cursor: pointer;
-    z-index: 10;
-    /* Optimizes for mobile taps */
-    touch-action: manipulation; 
+    position: relative; width: 100%; max-width: 800px; height: 450px;
+    margin: 0 auto; overflow: hidden; border-radius: 12px; cursor: pointer;
+    touch-action: manipulation; -webkit-tap-highlight-color: transparent;
 }
+.slider-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
+.img-after { z-index: 2; clip-path: inset(0 0 0 100%); transition: clip-path 0.7s ease-in-out; }
 
-.slider-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+/* Force reveal on Hover (Desktop) or Manual Class (Mobile) */
+.slider-container:hover .img-after,
+.slider-container.manual-reveal .img-after { clip-path: inset(0 0 0 0) !important; }
 
-.img-after {
-    z-index: 12;
-    clip-path: inset(0 0 0 100%); /* Start fully hidden on the right */
-    transition: clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
+.label { position: absolute; bottom: 20px; padding: 8px 16px; background: rgba(0,0,0,0.7); color: white; font-weight: bold; z-index: 5; border-radius: 4px; }
+.label-before { left: 20px; } .label-after { right: 20px; }
 
-/* Desktop Hover Trigger */
-.slider-container:hover .img-after {
-    clip-path: inset(0 0 0 0);
-}
+/* --- Services Grid --- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-card { background: var(--card-bg); padding: 2.5rem; border-radius: 15px; text-align: center; border: 1px solid rgba(0,0,0,0.05); }
+.service-link { display: inline-block; margin-top: 1rem; color: var(--accent-blue); text-decoration: none; font-weight: bold; }
 
-/* Mobile/Click Trigger (Activated by script.js) */
-.slider-container.manual-reveal .img-after {
-    clip-path: inset(0 0 0 0) !important;
-}
+/* --- Contact Form --- */
+#contact { max-width: 700px; margin: 4rem auto; padding: 3rem 2rem; background: var(--card-bg); border-radius: 20px; width: 90%; }
+.form-group { margin-bottom: 1.2rem; }
+input, select, textarea { width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #ddd; background: var(--bg-color); color: var(--text-color); font-size: 1rem; }
+.btn { width: 100%; padding: 16px; background: var(--accent-blue); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.1rem; }
 
-.label {
-    position: absolute;
-    bottom: 20px;
-    padding: 8px 16px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    font-weight: bold;
-    z-index: 20;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    border-radius: 4px;
-}
-.label-before { left: 20px; }
-.label-after { right: 20px; }
-
-/* ========================================
-    4. CONTACT SECTION (Width & Shrink Fix)
-   ======================================== */
-#contact {
-    max-width: 700px;
-    margin: 5rem auto;
-    padding: 3rem 2rem;
-    background: var(--card-bg);
-    border-radius: 15px;
-    width: 90%; /* Essential to prevent shrinking on mobile */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-#contact h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-.btn {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--accent-blue);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-/* ========================================
-    5. ABOUT PAGE (Namespaced Layout)
-   ======================================== */
-.about-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-.about-container .content-row {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    margin: 6rem 0;
-}
-
-.about-container .content-row.reverse {
-    flex-direction: row-reverse;
-}
-
-.about-container .row-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-/* ========================================
-    6. MOBILE RESPONSIVENESS
-   ======================================== */
+/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    /* Header Stacking & Centering */
-    .navbar-container {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .nav-links {
-        gap: 1.2rem;
-        justify-content: center;
-        padding: 0;
-    }
-
-    .logo {
-        justify-content: center;
-    }
-
-    /* Slider Height Adjustment */
-    .slider-container {
-        height: 300px;
-    }
-
-    /* Contact Form Spacing */
-    #contact {
-        width: 95%;
-        padding: 2rem 1.2rem;
-    }
-
-    /* About Page Stacking */
-    .about-container .content-row, 
-    .about-container .content-row.reverse {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
+    .navbar-container { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .nav-links { gap: 1.2rem; }
+    .slider-container { height: 320px; }
 }
 
-/* Utility: Back to Top */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent-blue);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-    font-size: 1.2rem;
-}
+.back-to-top { position: fixed; bottom: 20px; right: 20px; background: var(--accent-blue); color: white; border: none; padding: 12px 16px; border-radius: 50%; cursor: pointer; display: none; z-index: 100; }

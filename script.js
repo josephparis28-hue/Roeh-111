@@ -20,9 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Mobile Slider Fix ---
     const slider = document.getElementById('main-slider');
     if (slider) {
-        slider.addEventListener('click', function() {
-            this.classList.toggle('manual-reveal');
-        });
+        const handleToggle = (e) => {
+            slider.classList.toggle('manual-reveal');
+        };
+
+        // Standard click for desktop
+        slider.addEventListener('click', handleToggle);
+
+        // Immediate touch for mobile
+        slider.addEventListener('touchstart', (e) => {
+            handleToggle();
+            // Prevent double-tap zoom issues
+            if (e.cancelable) e.preventDefault();
+        }, {passive: false});
     }
 
     // --- 3. Back to Top ---
