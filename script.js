@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. THEME TOGGLE (GHOST PROTOCOL) ---
+    // 1. Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Load saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌓';
@@ -17,16 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌓';
     });
 
-    // --- 2. MOBILE SLIDER INTERACTION ---
+    // 2. Mobile Slider Tap Fix
     const slider = document.querySelector('.slider-container');
     if (slider) {
-        // Tapping the image toggles the 'manual-reveal' class in CSS
         slider.addEventListener('click', function() {
             this.classList.toggle('manual-reveal');
         });
     }
 
-    // --- 3. BACK TO TOP BUTTON ---
+    // 3. Back to Top Button
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
         window.addEventListener('scroll', () => {
