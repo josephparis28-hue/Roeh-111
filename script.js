@@ -1,33 +1,42 @@
-const runSliderLogic = () => {
-    const slider = document.getElementById('main-slider');
-    
-    if (slider) {
-        // We use 'click' which handles both tap and mouse
-        slider.onclick = function() {
-            this.classList.toggle('manual-reveal');
-            console.log("Slider toggled: " + this.classList.contains('manual-reveal'));
-        };
-    }
-};
-
-// Start checking for the element as soon as the script loads
-let checkExist = setInterval(function() {
-   if (document.getElementById('main-slider')) {
-      runSliderLogic();
-      clearInterval(checkExist);
-   }
-}, 100);
-
-// Also include your Theme Toggle here to keep it all in one file
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    if(themeToggle) {
-        themeToggle.onclick = () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    // --- 1. Theme Toggle ---
+    const themeBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    if(themeBtn) themeBtn.textContent = savedTheme === 'dark' ? '☀️' : '🌓';
+
+    if(themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const isDark = html.getAttribute('data-theme') === 'dark';
             const next = isDark ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', next);
+            html.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
-            themeToggle.textContent = next === 'dark' ? '☀️' : '🌓';
-        };
+            themeBtn.textContent = next === 'dark' ? '☀️' : '🌓';
+        });
+    }
+
+    // --- 2. Mobile Slider Fix ---
+    const slider = document.getElementById('main-slider');
+    if (slider) {
+        slider.addEventListener('click', function() {
+            this.classList.toggle('manual-reveal');
+        });
+    }
+
+    // --- 3. Back to Top ---
+    const topBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            topBtn.style.display = 'block';
+        } else {
+            topBtn.style.display = 'none';
+        }
+    });
+    if(topBtn) {
+        topBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
 });
