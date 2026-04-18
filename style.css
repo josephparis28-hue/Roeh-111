@@ -1,12 +1,10 @@
 /* ========================================
-    1. THEME VARIABLES & RESET
+    1. CORE THEME & RESET
    ======================================== */
 :root {
     --accent-blue: #007bff;
     --transition-speed: 0.4s;
     --overlay: rgba(0, 0, 0, 0.5);
-    
-    /* Default Light Mode */
     --bg-color: #ffffff;
     --text-color: #333333;
     --card-bg: #f9f9f9;
@@ -21,11 +19,7 @@ html[data-theme="dark"] {
     --overlay: rgba(0, 0, 0, 0.7);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -36,229 +30,74 @@ body {
 }
 
 /* ========================================
-    2. NAVIGATION (Mobile Centering Fixed)
+    2. NAVIGATION (Mobile Centering Fix)
    ======================================== */
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
-    background-size: cover;
-    background-position: center;
-    padding: 2rem 1rem;
-    color: white;
+    background-size: cover; background-position: center;
+    padding: 2rem 1rem; color: white;
 }
 
 .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
+.logo { display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; }
+.logo img { height: 40px; margin-left: 12px; }
 
-.logo img {
-    height: 40px;
-    margin-left: 12px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.theme-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a { text-decoration: none; color: white; font-weight: 500; }
 
 /* ========================================
-    3. HOME PAGE COMPONENTS
+    3. THE SLIDER (Interaction Fix)
    ======================================== */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 1rem;
-}
-
-.service-card {
-    background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid rgba(0,0,0,0.05);
-}
-
-/* --- Before/After Slider --- */
 .slider-container {
     position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    margin: 4rem auto;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    cursor: pointer;
+    width: 100%; max-width: 800px; height: 450px;
+    margin: 4rem auto; overflow: hidden;
+    border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer; z-index: 1;
 }
 
-.slider-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-}
+.slider-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
 
 .img-after {
-    clip-path: inset(0 0 0 100%);
-    transition: clip-path 0.6s ease-in-out;
     z-index: 2;
+    clip-path: inset(0 0 0 100%); /* Start hidden */
+    transition: clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.img-after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Ensure this is set to 100% to hide it initially */
-    clip-path: inset(0 0 0 100%); 
-    transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2;
-}
+/* Desktop Hover reveal */
+.slider-container:hover .img-after { clip-path: inset(0 0 0 0); }
 
-/* Force the reveal with !important when the class is present */
-.slider-container.manual-reveal .img-after {
-    clip-path: inset(0 0 0 0) !important;
-}
-
-/* Hover (Desktop) & Manual Class (Mobile) */
-.slider-container:hover .img-after,
+/* The class our JavaScript toggles on click/tap */
 .slider-container.manual-reveal .img-after {
     clip-path: inset(0 0 0 0) !important;
 }
 
 .label {
-    position: absolute;
-    bottom: 20px;
-    padding: 8px 16px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    font-weight: bold;
-    z-index: 10;
+    position: absolute; bottom: 20px; padding: 8px 16px;
+    background: rgba(0,0,0,0.6); color: white; font-weight: bold; z-index: 10;
 }
 .label-before { left: 20px; }
 .label-after { right: 20px; }
 
 /* ========================================
-    4. CONTACT FORM (Width Fixed)
+    4. CONTACT FORM (Width Fix)
    ======================================== */
 #contact {
-    max-width: 800px;
-    margin: 4rem auto;
-    padding: 3rem 2rem;
-    background: var(--card-bg);
-    border-radius: 15px;
-    width: 90%; /* Forces width on mobile */
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: var(--bg-color);
-    color: var(--text-color);
+    max-width: 800px; margin: 4rem auto;
+    padding: 3rem 2rem; background: var(--card-bg);
+    border-radius: 15px; width: 90%;
 }
 
 /* ========================================
-    5. ABOUT PAGE (Namespaced)
-   ======================================== */
-.about-container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
-
-.about-container .content-row {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    margin: 6rem 0;
-}
-
-.about-container .content-row.reverse { flex-direction: row-reverse; }
-
-.about-container .row-text, .about-container .row-image { flex: 1; }
-
-.about-container .row-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-/* ========================================
-    6. MOBILE RESPONSIVE OVERRIDES
+    5. MOBILE RESPONSIVENESS
    ======================================== */
 @media (max-width: 768px) {
-    /* Centering the Header */
-    .navbar-container {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    .nav-links {
-        justify-content: center;
-        width: 100%;
-        padding: 0;
-    }
-
-    .logo {
-        justify-content: center;
-        margin-left: 0;
-    }
-
-    /* Contact Form & Slider */
-    #contact { width: 95%; padding: 2rem 1rem; }
+    .navbar-container { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .nav-links { gap: 1.2rem; justify-content: center; }
     .slider-container { height: 300px; }
-
-    /* Stacking About Page Rows */
-    .about-container .content-row, 
-    .about-container .content-row.reverse {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--accent-blue);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 100;
+    #contact { width: 95%; padding: 2rem 1rem; }
 }
