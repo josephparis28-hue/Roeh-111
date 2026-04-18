@@ -16,13 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌓';
     });
 
-    // 2. Mobile Slider Tap Fix
-    const slider = document.querySelector('.slider-container');
+    
+const initSlider = () => {
+    const slider = document.getElementById('beforeAfterSlider');
     if (slider) {
-        slider.addEventListener('click', function() {
+        slider.addEventListener('click', function(e) {
+            // This toggles the class regardless of where you tap
             this.classList.toggle('manual-reveal');
+            console.log("Slider Toggled"); // You can see this in mobile inspect
         });
     }
+};
+
+// Run the function after a short delay to ensure DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlider);
+} else {
+    initSlider();
+}
+
 
     // 3. Back to Top Button
     const backToTopBtn = document.getElementById('backToTop');
