@@ -14,6 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('theme', 'dark');
             }
         });
+        
+    const slider = document.querySelector('.slider-container');
+
+     if (slider) {
+        slider.addEventListener('touchstart', function() {
+        this.classList.add('active-touch');
+    });
+
+    slider.addEventListener('touchend', function() {
+    // Optional: keeps it revealed after tap, or remove class to hide again
+    // this.classList.remove('active-touch'); 
+    });
+    }
+
     }
 
     window.addEventListener('scroll', () => {
@@ -28,3 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+
