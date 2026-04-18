@@ -1,30 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Theme Toggle Logic (The Ghost Protocol)
+    // --- 1. THEME TOGGLE (GHOST PROTOCOL) ---
     const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const htmlElement = document.documentElement;
 
-    // Set initial icon based on theme
-    themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌓';
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌓';
 
     themeToggle.addEventListener('click', () => {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        const newTheme = isDark ? 'light' : 'dark';
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         
-        document.documentElement.setAttribute('data-theme', newTheme);
+        htmlElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌓';
     });
 
-    // 2. Before/After Slider Mobile Interaction
-    const sliderContainer = document.querySelector('.slider-container');
-    if (sliderContainer) {
-        // This allows Pampa users to tap the image on their phones to switch views
-        sliderContainer.addEventListener('click', function() {
+    // --- 2. MOBILE SLIDER INTERACTION ---
+    const slider = document.querySelector('.slider-container');
+    if (slider) {
+        // Tapping the image toggles the 'manual-reveal' class in CSS
+        slider.addEventListener('click', function() {
             this.classList.toggle('manual-reveal');
         });
     }
 
-    // 3. Back to Top Button Logic
+    // --- 3. BACK TO TOP BUTTON ---
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
         window.addEventListener('scroll', () => {
@@ -36,10 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });
