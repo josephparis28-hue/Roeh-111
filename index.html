@@ -3,129 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roeh 111 | Digital Restoration & Kingdom Solutions</title>
-    
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            }
-        })();
-    </script>
-
-    <link rel="icon" type="image/png" href="assets/images/favicon.ico.png">
+    <title>Roeh 111 | Restoration Services</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<nav class="navbar">
-    <div class="navbar-container">
-        <a href="index.html" class="logo">
-            Roeh 111 
-            <img src="assets/images/favicon.ico.png" alt="Roeh Icon">
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="pages/about.html">About</a></li>
-            <li><a href="pages/digital.html">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <div class="theme-btn-wrapper">
-            <button id="theme-toggle" class="theme-btn">🌓</button>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                Roeh 111 <img src="assets/images/favicon.ico.png" alt="Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="theme-btn-wrapper">
+                <button id="theme-toggle" class="theme-btn">🌓</button>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<section id="services" style="max-width: 1200px; margin: 4rem auto; padding: 0 1rem;">
-    <h2 style="text-align: center; margin-bottom: 3rem;">Our Solutions</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="service-card">
-            <h3>Digital</h3>
-            <p>Web development and content to further your goals.</p>
-            <a href="pages/digital.html" class="service-link">Learn More →</a>
-        </div>
-        <div class="service-card">
-            <h3>Home Repair</h3>
-            <p>Reliable repair and maintenance services in Pampa, Texas.</p>
-            <a href="pages/home-repair.html" class="service-link">Learn More →</a>
-        </div>
-        <div class="service-card">
-            <h3>Life</h3>
-            <p>Kingdom of Heaven Synchronization powered by the Holy Spirit.</p>
-            <a href="pages/life.html" class="service-link">Learn More →</a>
-        </div>
-    </div>
-</section>
+    <main class="container">
+        <section class="slider-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Our Work in Pampa</h2>
+            <div class="slider-container" id="main-slider">
+                <div class="img-before">
+                    <img src="assets/images/CxQk5.jpg" alt="Before" style="pointer-events: none;">
+                    <div class="label label-before">Before</div>
+                </div>
+                <div class="img-after">
+                    <img src="assets/images/lbrpw.jpg" alt="After" style="pointer-events: none;">
+                    <div class="label label-after">After</div>
+                </div>
+            </div>
+        </section>
 
-<section id="portfolio" style="max-width: 1200px; margin: 4rem auto; padding: 0 1rem;">
-    <h2 style="text-align: center; margin-bottom: 2rem;">Recent Restoration Projects</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        
-        <div class="portfolio-card">
-            <div class="project-tag">Coming Soon</div>
-            <h3>Project</h3>
-            <p>Description of the project.</p>
-        </div>
+        <section id="contact">
+            <h2>Connect With Us</h2>
+            <form action="https://formspree.io/f/your-id" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </section>
+    </main>
 
-        <div class="portfolio-card">
-            <div class="project-tag">Coming Soon</div>
-            <h3>Project</h3>
-            <p>Description of the project.</p>
-        </div>
+    <button id="backToTop" class="back-to-top">↑</button>
 
-    </div>
-    <section id="comparison-slider" style="max-width: 1200px; margin: 4rem auto; padding: 0 1rem;">
-    <h2 style="text-align: center; margin-bottom: 2rem;">Restoration in Action</h2>
-    
-<div class="slider-container" id="main-slider">
-    <div class="img-before">
-        <img src="assets/images/CxQk5.jpg" alt="Before Restoration" loading="eager" style="pointer-events: none;">
-        <div class="label label-before">Before</div>
-    </div>
-    
-    <div class="img-after">
-        <img src="assets/images/lbrpw.jpg" alt="After Restoration" loading="eager" style="pointer-events: none;">
-        <div class="label label-after">After</div>
-    </div>
-</div>
-
-    <p style="text-align: center; margin-top: 1rem; font-style: italic; opacity: 0.7;">
-        Hover over the image to see the transformation
-    </p>
-    </div>
-</section>
-</section>
-
-<section id="contact">
-    <h2 style="text-align: center; margin-bottom: 2rem;">Connect with Roeh 111</h2>
-    <form action="https://formspree.io/f/mvzdoyww" method="POST">
-        <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
-        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
-        <div class="form-group">
-            <select name="service_interest">
-                <option value="" disabled selected>Select a Service</option>
-                <option value="digital">Digital Development</option>
-                <option value="repair">Home Repair</option>
-                <option value="life">Life Consultation</option>
-            </select>
-        </div>
-        <div class="form-group"><textarea name="message" placeholder="How can we serve you today?" required></textarea></div>
-        <input type="hidden" name="_next" value="https://josephparis28-hue.github.io/Roeh-111/pages/thank-you.html">
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-</section>
-
-<footer>
-    <div style="text-align: center; padding: 2rem; opacity: 0.8;">
-        <p><strong>Serving Pampa, Texas & Surrounding Gray County Areas</strong></p>
-        <p style="font-size: 0.9rem;">Web Development | Home Restoration | Kingdom Solutions</p>
-        <p style="margin-top: 10px;">&copy; 2026 Roeh 111 | Veteran Owned & Operated</p>
-    </div>
-</footer>
-
-<button id="backToTop" class="back-to-top">↑</button>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
