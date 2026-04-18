@@ -1,83 +1,45 @@
-:root {
-    --accent-blue: #007bff;
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --card-bg: #f9f9f9;
-    --overlay: rgba(0, 0, 0, 0.5);
-    --header-bg: url('assets/images/RoehBackground.jpg');
-}
+// Function to handle the slider
+const setupSlider = () => {
+    const slider = document.getElementById('main-slider');
+    if (slider) {
+        slider.onclick = function() {
+            this.classList.toggle('manual-reveal');
+            console.log("Slider Toggled");
+        };
+    }
+};
 
-html[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-color: #f0f0f0;
-    --card-bg: #2d2d2d;
-}
+// Function to handle Theme
+const setupTheme = () => {
+    const themeBtn = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    if (themeBtn) {
+        themeBtn.onclick = () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const nextTheme = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+            themeBtn.textContent = nextTheme === 'dark' ? '☀️' : '🌓';
+        };
+    }
+};
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+// Aggressive check to ensure elements exist before running
+const checkInterval = setInterval(() => {
+    if (document.getElementById('main-slider') && document.getElementById('theme-toggle')) {
+        setupSlider();
+        setupTheme();
+        clearInterval(checkInterval);
+    }
+}, 100);
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background 0.3s, color 0.3s;
-}
-
-/* NAVBAR & MOBILE CENTERING */
-.navbar {
-    background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
-    background-size: cover; background-position: center;
-    padding: 2rem 1rem; color: white;
-}
-
-.navbar-container {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-}
-
-/* SLIDER LOGIC */
-.slider-container {
-    position: relative;
-    width: 100%; max-width: 800px; height: 450px;
-    margin: 0 auto; overflow: hidden;
-    border-radius: 12px; cursor: pointer;
-    touch-action: manipulation; /* Prevents double-tap zoom */
-}
-
-.slider-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
-
-.img-after {
-    z-index: 2;
-    clip-path: inset(0 0 0 100%); /* Start Hidden */
-    transition: clip-path 0.7s ease-in-out;
-}
-
-/* Reveal Trigger */
-.slider-container:hover .img-after,
-.slider-container.manual-reveal .img-after {
-    clip-path: inset(0 0 0 0) !important;
-}
-
-.label {
-    position: absolute; bottom: 20px; padding: 8px 16px;
-    background: rgba(0,0,0,0.7); color: white; z-index: 10; font-weight: bold;
-}
-.label-before { left: 20px; }
-.label-after { right: 20px; }
-
-/* CONTACT FORM FIX */
-#contact {
-    max-width: 600px; margin: 4rem auto;
-    padding: 2rem; background: var(--card-bg);
-    border-radius: 12px; width: 90%;
-}
-
-input, textarea { width: 100%; padding: 12px; margin-bottom: 1rem; border-radius: 6px; border: 1px solid #ccc; }
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .navbar-container { flex-direction: column; gap: 1.5rem; text-align: center; }
-    .nav-links { gap: 1rem; }
-    .slider-container { height: 300px; }
-}
-
-.back-to-top { position: fixed; bottom: 20px; right: 20px; display: none; }
+// Back to Top Logic
+window.onscroll = () => {
+    const btn = document.getElementById('backToTop');
+    if (btn) {
+        btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
