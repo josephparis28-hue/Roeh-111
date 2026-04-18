@@ -1,6 +1,19 @@
 /* ========================================
-    1. CORE THEME & VARIABLES
+    1. THEME VARIABLES & RESET
    ======================================== */
+:root {
+    --accent-blue: #007bff;
+    --transition-speed: 0.4s;
+    --overlay: rgba(0, 0, 0, 0.5);
+    
+    /* Default Light Mode */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f9f9f9;
+    --header-bg: url('assets/images/RoehBackground.jpg');
+    --about-hero-bg: url('assets/images/PampaSkyline.jpg');
+}
+
 html[data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #f0f0f0;
@@ -8,54 +21,79 @@ html[data-theme="dark"] {
     --overlay: rgba(0, 0, 0, 0.7);
 }
 
-:root {
-    --accent-blue: #007bff;
-    --transition-speed: 0.4s;
-    --overlay: rgba(0, 0, 0, 0.5);
-    --header-bg: url('assets/images/RoehBackground.jpg');
-    --about-hero-bg: url('assets/images/PampaSkyline.jpg');
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --card-bg: #f9f9f9;
-}
-
-html { background-color: var(--bg-color); scroll-behavior: smooth; }
-
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* ========================================
-    2. NAVIGATION
+    2. NAVIGATION (Mobile Centered)
    ======================================== */
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
-    background-size: cover; background-position: center;
-    padding: 2rem 1rem; color: white;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 1rem;
+    color: white;
 }
 
 .navbar-container {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.logo { display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; }
-.logo img { height: 32px; margin-left: 12px; }
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
-.nav-links { display: flex; list-style: none; gap: 2rem; }
-.nav-links a { text-decoration: none; color: white; font-weight: 500; }
+.logo img {
+    height: 40px;
+    margin-left: 12px;
+}
 
-.theme-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
 
 /* ========================================
-    3. HOME PAGE LAYOUT (The Grid)
+    3. HOME PAGE LAYOUT
    ======================================== */
 .services-grid {
     display: grid;
@@ -66,18 +104,21 @@ body {
     padding: 0 1rem;
 }
 
-.service-card, .portfolio-card {
+.service-card {
     background: var(--card-bg);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 12px;
+    text-align: center;
     border: 1px solid rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 }
 
-.service-card:hover { transform: translateY(-10px); }
+.service-card:hover {
+    transform: translateY(-10px);
+}
 
 /* ========================================
-    4. BEFORE/AFTER SLIDER (Mobile Fix)
+    4. BEFORE/AFTER SLIDER
    ======================================== */
 .slider-container {
     position: relative;
@@ -91,7 +132,12 @@ body {
     cursor: pointer;
 }
 
-.slider-container img { width: 100%; height: 100%; object-fit: cover; position: absolute; }
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
 
 .img-after {
     clip-path: inset(0 0 0 100%);
@@ -99,44 +145,150 @@ body {
     z-index: 2;
 }
 
-/* Desktop Hover */
-.slider-container:hover .img-after { clip-path: inset(0 0 0 0); }
+/* Desktop Hover Trigger */
+.slider-container:hover .img-after {
+    clip-path: inset(0 0 0 0);
+}
 
-/* Mobile Touch Trigger */
-.slider-container.manual-reveal .img-after { clip-path: inset(0 0 0 0) !important; }
+/* Mobile Toggle Trigger (via script.js) */
+.slider-container.manual-reveal .img-after {
+    clip-path: inset(0 0 0 0) !important;
+}
 
 .label {
-    position: absolute; bottom: 20px; padding: 8px 16px;
-    background: rgba(0,0,0,0.6); color: white;
-    font-weight: bold; text-transform: uppercase; z-index: 10;
+    position: absolute;
+    bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-weight: bold;
+    z-index: 10;
 }
 .label-before { left: 20px; }
 .label-after { right: 20px; }
 
 /* ========================================
-    5. ABOUT PAGE LAYOUT (Namespaced)
+    5. CONTACT FORM (Fixed Width)
    ======================================== */
-.about-container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+#contact {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    width: 90%; /* Prevents shrinking on mobile */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ========================================
+    6. ABOUT PAGE (Namespaced)
+   ======================================== */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
 
 .about-hero {
     padding: 10rem 1rem;
     background: linear-gradient(var(--overlay), var(--overlay)), var(--about-hero-bg);
-    background-size: cover; background-position: center; background-attachment: fixed;
-    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
 }
 
-.about-container .content-row { display: flex; align-items: center; gap: 4rem; margin: 6rem 0; }
-.about-container .content-row.reverse { flex-direction: row-reverse; }
-.about-container .row-text, .about-container .row-image { flex: 1; }
-.about-container .row-image img { width: 100%; height: 350px; object-fit: cover; border-radius: 12px; }
+.about-container .content-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 6rem 0;
+}
+
+.about-container .content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-container .row-text, .about-container .row-image {
+    flex: 1;
+}
+
+.about-container .row-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
 
 /* ========================================
-    6. RESPONSIVENESS
+    7. MOBILE RESPONSIVENESS
    ======================================== */
 @media (max-width: 768px) {
-    .navbar-container { flex-direction: column; gap: 1rem; }
-    .slider-container { height: 300px; }
-    .about-container .content-row, .about-container .content-row.reverse {
-        flex-direction: column; text-align: center;
+    /* Center Header Elements */
+    .navbar-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
     }
+
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    /* Slider Adjustments */
+    .slider-container {
+        height: 300px;
+    }
+
+    /* Contact Form Adjustments */
+    #contact {
+        width: 95%;
+        padding: 2rem 1rem;
+    }
+
+    /* About Page Row Stacking */
+    .about-container .content-row, 
+    .about-container .content-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-hero {
+        background-attachment: scroll; /* Fixes performance on mobile browsers */
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
 }
