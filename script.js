@@ -21,11 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('touchstart', function() {
         this.classList.add('active-touch');
     });
+    
+    // Add this to your existing script.js
+    const slider = document.querySelector('.slider-container');
+
+    if (slider) {
+      slider.addEventListener('click', function() {
+      this.classList.toggle('show-after');
+    });
+    }
 
     slider.addEventListener('touchend', function() {
     // Optional: keeps it revealed after tap, or remove class to hide again
     // this.classList.remove('active-touch'); 
-    });
     }
 
     }
