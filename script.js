@@ -40,3 +40,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+const handle = document.querySelector('.slider-handle');
+
+handle.addEventListener('keydown', (e) => {
+  let currentValue = parseInt(handle.getAttribute('aria-valuenow'));
+  
+  switch (e.key) {
+    case 'ArrowRight':
+    case 'ArrowUp':
+      updateSlider(currentValue + 1);
+      break;
+    case 'ArrowLeft':
+    case 'ArrowDown':
+      updateSlider(currentValue - 1);
+      break;
+    case 'Home':
+      updateSlider(0);
+      break;
+    case 'End':
+      updateSlider(100);
+      break;
+  }
+});
+
