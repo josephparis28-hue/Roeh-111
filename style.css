@@ -33,11 +33,10 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    overflow-x: hidden; /* Prevents side-scrolling on mobile */
 }
 
 /* ========================================
-    2. NAVIGATION (Mobile Centered)
+    2. NAVIGATION (Mobile Centering Fixed)
    ======================================== */
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
@@ -67,7 +66,6 @@ body {
 .logo img {
     height: 40px;
     margin-left: 12px;
-    object-fit: contain;
 }
 
 .nav-links {
@@ -83,10 +81,6 @@ body {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--accent-blue);
-}
-
 .theme-btn {
     background: none;
     border: none;
@@ -95,7 +89,7 @@ body {
 }
 
 /* ========================================
-    3. HOME PAGE LAYOUT
+    3. HOME PAGE COMPONENTS
    ======================================== */
 .services-grid {
     display: grid;
@@ -112,16 +106,9 @@ body {
     border-radius: 12px;
     text-align: center;
     border: 1px solid rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-/* ========================================
-    4. BEFORE/AFTER SLIDER (Mobile Fix)
-   ======================================== */
+/* --- Before/After Slider --- */
 .slider-container {
     position: relative;
     width: 100%;
@@ -132,7 +119,6 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: pointer;
-    touch-action: pan-y;
 }
 
 .slider-container img {
@@ -148,12 +134,8 @@ body {
     z-index: 2;
 }
 
-/* Desktop Hover Trigger */
-.slider-container:hover .img-after {
-    clip-path: inset(0 0 0 0);
-}
-
-/* Mobile Toggle Trigger (via script.js) */
+/* Hover (Desktop) & Manual Class (Mobile) */
+.slider-container:hover .img-after,
 .slider-container.manual-reveal .img-after {
     clip-path: inset(0 0 0 0) !important;
 }
@@ -171,7 +153,7 @@ body {
 .label-after { right: 20px; }
 
 /* ========================================
-    5. CONTACT FORM (Optimized for Mobile)
+    4. CONTACT FORM (Width Fixed)
    ======================================== */
 #contact {
     max-width: 800px;
@@ -179,45 +161,23 @@ body {
     padding: 3rem 2rem;
     background: var(--card-bg);
     border-radius: 15px;
-    width: 90%; /* Prevents shrinking */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
+    width: 90%; /* Forces width on mobile */
 }
 
 input, textarea {
     width: 100%;
     padding: 12px;
+    margin-bottom: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     background: var(--bg-color);
     color: var(--text-color);
-    font-size: 1rem;
 }
 
 /* ========================================
-    6. ABOUT PAGE (Namespaced - Protects Home)
+    5. ABOUT PAGE (Namespaced)
    ======================================== */
-.about-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-.about-hero {
-    padding: 10rem 1rem;
-    background: linear-gradient(var(--overlay), var(--overlay)), var(--about-hero-bg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
+.about-container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
 
 .about-container .content-row {
     display: flex;
@@ -226,13 +186,9 @@ input, textarea {
     margin: 6rem 0;
 }
 
-.about-container .content-row.reverse {
-    flex-direction: row-reverse;
-}
+.about-container .content-row.reverse { flex-direction: row-reverse; }
 
-.about-container .row-text, .about-container .row-image {
-    flex: 1;
-}
+.about-container .row-text, .about-container .row-image { flex: 1; }
 
 .about-container .row-image img {
     width: 100%;
@@ -242,10 +198,10 @@ input, textarea {
 }
 
 /* ========================================
-    7. MOBILE RESPONSIVENESS
+    6. MOBILE RESPONSIVE OVERRIDES
    ======================================== */
 @media (max-width: 768px) {
-    /* Header Stacking & Centering */
+    /* Centering the Header */
     .navbar-container {
         flex-direction: column;
         gap: 1.5rem;
@@ -253,34 +209,26 @@ input, textarea {
     }
 
     .nav-links {
-        gap: 1.2rem;
         justify-content: center;
+        width: 100%;
+        padding: 0;
     }
 
     .logo {
         justify-content: center;
+        margin-left: 0;
     }
 
-    /* Slider Size Adjustment */
-    .slider-container {
-        height: 300px;
-    }
+    /* Contact Form & Slider */
+    #contact { width: 95%; padding: 2rem 1rem; }
+    .slider-container { height: 300px; }
 
-    /* Contact Form Width */
-    #contact {
-        width: 95%;
-        padding: 2rem 1rem;
-    }
-
-    /* About Page Row Stacking */
+    /* Stacking About Page Rows */
     .about-container .content-row, 
     .about-container .content-row.reverse {
         flex-direction: column;
         text-align: center;
-    }
-
-    .about-hero {
-        background-attachment: scroll; /* Performance fix for mobile */
+        gap: 2rem;
     }
 }
 
@@ -291,7 +239,7 @@ input, textarea {
     background: var(--accent-blue);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px;
     border-radius: 50%;
     cursor: pointer;
     display: none;
