@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Roeh 111</title>
+    
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme');
@@ -9,9 +13,7 @@
             }
         })();
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Roeh 111</title>
+
     <link rel="icon" type="image/png" href="../assets/images/favicon.ico.png">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -23,12 +25,13 @@
             Roeh 111 
             <img src="../assets/images/favicon.ico.png" alt="Roeh Icon">
         </a>
+        
         <ul class="nav-links">
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="digital.html">Digital</a></li>
-            <li><a href="home-repair.html">Repair</a></li>
-            <li><a href="life.html">Life</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="digital.html">Services</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
         </ul>
+
         <div class="theme-btn-wrapper">
             <button id="theme-toggle" class="theme-btn">🌓</button>
         </div>
@@ -36,89 +39,51 @@
 </nav>
 
 <header class="about-hero">
-    <div class="hero-content">
-        <h1>The Roeh 111 Story</h1>
-        <p class="hero-quote">"Excellence is not an act, but a habit—refined through service and grounded in True Biblical Faith."</p>
-    </div>
+    <h1>Our Mission</h1>
+    <p>Serving the Texas Panhandl leaving everything better than found.</p>
 </header>
 
-<main class="about-container">
-    
-    <section class="content-row">
-        <div class="row-text">
-            <h2>Our Mission</h2>
-            <p>
-                At Roeh 111, we believe that every project
-                —whether a line of code or a complete remodel—
-                is an opportunity for restoration. 
-                We bring a disciplined veteran-led approach to 
-                solving complex problems in the Pampa community.
-            </p>
-        </div>
-        <div class="row-image">
-            <img src="" alt="Restoration Work">
-        </div>
-    </section>
-
-    <section class="content-row reverse">
-        <div class="row-text">
-            <h2>The Veteran and Social Worker Edge</h2>
-            <p>
-                Founded by a military veteran and social worker, 
-                we operate with precision and integrity. 
-                We treat your home or business with the same 
-                accountability we brought to the service, 
-                ensuring every detail is handled with excellence.
-            </p>
-        </div>
-        <div class="row-image">
-            <img src="" alt="Veteran and Social Worker Led Service">
-        </div>
-    </section>
-
-    <section class="pillars-section">
-        <h2 style="text-align: center; margin-bottom: 3rem; color: var(--accent-blue);">The Three Pillars</h2>
-        <div class="pillars-grid">
-            <div class="pillar-card">
-                <div class="pillar-icon"></div>
-                <h4>Digital Integrity</h4>
-                <p>Building semantic, accessible and clean code that stands the test of time.</p>
+<main>
+    <section class="pillars-wrapper">
+        <h2 class="center-title">The Foundation of Roeh 111</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Integrity</h3>
+                <p>Guided by Heavenly values, we prioritize transparency and honest communication in every project.</p>
             </div>
-            <div class="pillar-card">
-                <div class="pillar-icon"></div>
-                <h4>Stewardship</h4>
-                <p>Maintenance and restoration of homes with a focus on longevity and safety.</p>
+            <div class="service-card">
+                <h3>Innovation</h3>
+                <p>Blending modern software development with traditional repair techniques for long-lasting solutions.</p>
             </div>
-            <div class="pillar-card">
-                <div class="pillar-icon"></div>
-                <h4>Kingdom Alignment</h4>
-                <p>Synchronizing life in the physical and spiritual through biblical principles.</p>
+            <div class="service-card">
+                <h3>Service</h3>
+                <p>Dedicated to our community, offering specialized consultation to help small businesses and homeowners thrive.</p>
             </div>
         </div>
     </section>
 
-        <section class="about-hero-section">
-    <div class="content-row">
-        <div class="row-image">
-            <img src="" alt="Pampa Texas">
+    <section class="pampa-brand-section">
+        <div class="pampa-brand-content">
+            <h2>Rooted in Pampa</h2>
+            <p>Our work is a commitment to the place we call home. From restoring local properties to building digital infrastructure, our roots are firmly planted in the Texas Panhandle.</p>
         </div>
-        <div class="row-text">
-            <h2>Rooted in Texas</h2>
-            <p>Based in Pampa, Roeh 111 is more than a business; it’s a commitment to the community. As a veteran-owned entity, we bring military precision to every home repair and digital project.</p>
-        </div>
-    </div>
-</section>
-        <br>
-        <a href="../index.html#contact" class="btn" style="max-width: 300px; margin: 0 auto;">Start a Project</a>
     </section>
-    
+
+    <section class="cta-section">
+        <h3>Ready to start a project?</h3>
+        <p>Let's discuss how we can serve your digital or home repair needs.</p>
+        <div class="cta-wrapper">
+            <a href="../index.html#contact" class="btn cta-btn">Start Project</a>
+        </div>
+    </section>
 </main>
 
 <footer>
-    <p style="text-align: center; padding: 2rem; opacity: 0.7;">&copy; 2026 Roeh 111 | Built with Integrity in Pampa, TX</p>
+    <p>&copy; 2026 Roeh 111 | Built with Integrity</p>
 </footer>
 
 <button id="backToTop" class="back-to-top">↑</button>
+
 <script src="../script.js"></script>
 </body>
 </html>
