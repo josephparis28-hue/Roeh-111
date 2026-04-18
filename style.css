@@ -1,45 +1,280 @@
-// Function to handle the slider
-const setupSlider = () => {
-    const slider = document.getElementById('main-slider');
-    if (slider) {
-        slider.onclick = function() {
-            this.classList.toggle('manual-reveal');
-            console.log("Slider Toggled");
-        };
-    }
-};
-
-// Function to handle Theme
-const setupTheme = () => {
-    const themeBtn = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+/* ========================================
+    1. CORE THEME & VARIABLES
+   ======================================== */
+:root {
+    --accent-blue: #007bff;
+    --transition-speed: 0.4s;
+    --overlay: rgba(0, 0, 0, 0.5);
     
-    if (themeBtn) {
-        themeBtn.onclick = () => {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            const nextTheme = isDark ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', nextTheme);
-            localStorage.setItem('theme', nextTheme);
-            themeBtn.textContent = nextTheme === 'dark' ? '☀️' : '🌓';
-        };
-    }
-};
+    /* Default Light Mode */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f9f9f9;
+    --header-bg: url('assets/images/RoehBackground.jpg');
+    --about-hero-bg: url('assets/images/PampaSkyline.jpg');
+}
 
-// Aggressive check to ensure elements exist before running
-const checkInterval = setInterval(() => {
-    if (document.getElementById('main-slider') && document.getElementById('theme-toggle')) {
-        setupSlider();
-        setupTheme();
-        clearInterval(checkInterval);
-    }
-}, 100);
+/* Dark Mode Variables */
+html[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-bg: #2d2d2d;
+    --overlay: rgba(0, 0, 0, 0.7);
+}
 
-// Back to Top Logic
-window.onscroll = () => {
-    const btn = document.getElementById('backToTop');
-    if (btn) {
-        btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* ========================================
+    2. NAVIGATION (Mobile Centering Fix)
+   ======================================== */
+.navbar {
+    background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
+    background-size: cover;
+    background-position: center;
+    padding: 2.5rem 1rem;
+    color: white;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.logo img {
+    height: 40px;
+    margin-left: 12px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+/* ========================================
+    3. BEFORE/AFTER SLIDER (Interaction Fix)
+   ======================================== */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: 4rem auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 10;
+    /* Optimizes for mobile taps */
+    touch-action: manipulation; 
+}
+
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.img-after {
+    z-index: 12;
+    clip-path: inset(0 0 0 100%); /* Start fully hidden on the right */
+    transition: clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Desktop Hover Trigger */
+.slider-container:hover .img-after {
+    clip-path: inset(0 0 0 0);
+}
+
+/* Mobile/Click Trigger (Activated by script.js) */
+.slider-container.manual-reveal .img-after {
+    clip-path: inset(0 0 0 0) !important;
+}
+
+.label {
+    position: absolute;
+    bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-weight: bold;
+    z-index: 20;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+.label-before { left: 20px; }
+.label-after { right: 20px; }
+
+/* ========================================
+    4. CONTACT SECTION (Width & Shrink Fix)
+   ======================================== */
+#contact {
+    max-width: 700px;
+    margin: 5rem auto;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    width: 90%; /* Essential to prevent shrinking on mobile */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+    5. ABOUT PAGE (Namespaced Layout)
+   ======================================== */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.about-container .content-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 6rem 0;
+}
+
+.about-container .content-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-container .row-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ========================================
+    6. MOBILE RESPONSIVENESS
+   ======================================== */
+@media (max-width: 768px) {
+    /* Header Stacking & Centering */
+    .navbar-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
     }
-};
+
+    .nav-links {
+        gap: 1.2rem;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    /* Slider Height Adjustment */
+    .slider-container {
+        height: 300px;
+    }
+
+    /* Contact Form Spacing */
+    #contact {
+        width: 95%;
+        padding: 2rem 1.2rem;
+    }
+
+    /* About Page Stacking */
+    .about-container .content-row, 
+    .about-container .content-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+}
+
+/* Utility: Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    font-size: 1.2rem;
+}
