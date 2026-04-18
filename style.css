@@ -152,30 +152,43 @@ body {
 /*
     Before/After 
  */
+/* Update these specific rules in your style.css */
+
 .slider-container {
     position: relative;
     width: 100%;
     max-width: 800px;
-    height: 450px; /* Default desktop height */
+    height: 450px;
     margin: 2rem auto;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: ew-resize;
-    /* This ensures the mobile "tap" is recognized as a hover */
-    -webkit-tap-highlight-color: transparent; 
+    /* Prevent mobile "long-press" menus from popping up while sliding */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-/* Mobile Specific Adjustment */
-@media (max-width: 768px) {
-    .slider-container {
-        height: 300px; /* Shorter height for mobile screens */
-    }
-    
-    .img-after {
-        /* On mobile, we reduce the transition time for a snappier feel */
-        transition: clip-path 0.4s ease-in-out;
-    }
+.img-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Start hidden */
+    clip-path: inset(0 0 0 100%); 
+    transition: clip-path 0.6s ease-in-out;
+}
+
+/* Desktop Hover */
+.slider-container:hover .img-after {
+    clip-path: inset(0 0 0 0);
+}
+
+/* Mobile Trigger - This class will be toggled by JS */
+.slider-container.manual-reveal .img-after {
+    clip-path: inset(0 0 0 0);
 }
 
 /* Forces the reveal when the 'active-touch' class is added via JS */
