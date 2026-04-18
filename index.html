@@ -3,90 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roeh 111 | Professional Restoration & Maintenance</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Roeh 111 | Digital Restoration & Kingdom Solutions</title>
+    
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+
     <link rel="icon" type="image/png" href="assets/images/favicon.ico.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="logo">
-                Roeh 111
-                <img src="assets/images/favicon.ico.png" alt="Roeh 111 Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <div class="theme-btn-wrapper">
-                <button id="theme-toggle" class="theme-btn">🌓</button>
-            </div>
+<nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="logo">
+            Roeh 111 
+            <img src="assets/images/favicon.ico.png" alt="Roeh Icon">
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/digital.html">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="theme-btn-wrapper">
+            <button id="theme-toggle" class="theme-btn">🌓</button>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <main>
-        <section class="container">
-            <h2 style="text-align: center; margin-top: 3rem;">Expert Wood Restoration</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-color); opacity: 0.8;">
-                Tap or hover over the image to see our results.
-            </p>
-            
-            <div class="slider-container" id="main-slider">
-                <div class="img-before">
-                    <img src="assets/images/CxQk5.jpg" alt="Weathered Wood Before" style="pointer-events: none;">
-                    <div class="label label-before">Before</div>
-                </div>
-                
-                <div class="img-after">
-                    <img src="assets/images/lbrpw.jpg" alt="Restored Wood After" style="pointer-events: none;">
-                    <div class="label label-after">After</div>
-                </div>
-            </div>
-        </section>
+<section id="services" style="max-width: 1200px; margin: 4rem auto; padding: 0 1rem;">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Our Solutions</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div class="service-card">
+            <h3>Digital</h3>
+            <p>Web development and content to further your goals.</p>
+            <a href="pages/digital.html" class="service-link">Learn More →</a>
+        </div>
+        <div class="service-card">
+            <h3>Home Repair</h3>
+            <p>Reliable repair and maintenance services in Pampa, Texas.</p>
+            <a href="pages/home-repair.html" class="service-link">Learn More →</a>
+        </div>
+        <div class="service-card">
+            <h3>Life</h3>
+            <p>Kingdom of Heaven Synchronization powered by the Holy Spirit.</p>
+            <a href="pages/life.html" class="service-link">Learn More →</a>
+        </div>
+    </div>
+</section>
 
-        <section class="container">
-            <h2 style="text-align: center; margin-top: 4rem;">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Wood Restoration</h3>
-                    <p>Decks, fences, and outdoor structures brought back to life.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Property Maintenance</h3>
-                    <p>Reliable upkeep for residential and commercial properties in Pampa.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Specialized Cleaning</h3>
-                    <p>Deep cleaning solutions tailored to your infrastructure needs.</p>
-                </div>
-            </div>
-        </section>
+<section id="contact">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Connect with Roeh 111</h2>
+    <form action="https://formspree.io/f/mvzdoyww" method="POST">
+        <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
+        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+        <div class="form-group">
+            <select name="service_interest">
+                <option value="" disabled selected>Select a Service</option>
+                <option value="digital">Digital Development</option>
+                <option value="repair">Home Repair</option>
+                <option value="life">Life Consultation</option>
+            </select>
+        </div>
+        <div class="form-group"><textarea name="message" placeholder="How can we serve you today?" required></textarea></div>
+        <input type="hidden" name="_next" value="https://josephparis28-hue.github.io/Roeh-111/pages/thank-you.html">
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
 
-        <section id="contact">
-            <h2>Connect With Us</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">Ready to start your project? Send us a message.</p>
-            <form action="https://formspree.io/f/your-id" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
-    </main>
+<footer>
+    <p style="text-align: center; padding: 2rem; opacity: 0.7;">&copy; 2026 Roeh 111 | Built with Integrity</p>
+</footer>
 
-    <footer style="text-align: center; padding: 4rem 1rem; opacity: 0.7; font-size: 0.9rem;">
-        <p>&copy; 2026 Roeh 111. All rights reserved. Pampa, Texas.</p>
-    </footer>
-
-    <button id="backToTop" class="back-to-top">↑</button>
-
-    <script src="script.js"></script>
+<button id="backToTop" class="back-to-top">↑</button>
+<script src="script.js"></script>
 </body>
 </html>
