@@ -33,6 +33,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden; /* Prevents side-scrolling on mobile */
 }
 
 /* ========================================
@@ -66,6 +67,7 @@ body {
 .logo img {
     height: 40px;
     margin-left: 12px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -118,7 +120,7 @@ body {
 }
 
 /* ========================================
-    4. BEFORE/AFTER SLIDER
+    4. BEFORE/AFTER SLIDER (Mobile Fix)
    ======================================== */
 .slider-container {
     position: relative;
@@ -130,6 +132,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: pointer;
+    touch-action: pan-y;
 }
 
 .slider-container img {
@@ -168,7 +171,7 @@ body {
 .label-after { right: 20px; }
 
 /* ========================================
-    5. CONTACT FORM (Fixed Width)
+    5. CONTACT FORM (Optimized for Mobile)
    ======================================== */
 #contact {
     max-width: 800px;
@@ -176,7 +179,8 @@ body {
     padding: 3rem 2rem;
     background: var(--card-bg);
     border-radius: 15px;
-    width: 90%; /* Prevents shrinking on mobile */
+    width: 90%; /* Prevents shrinking */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .form-group {
@@ -190,10 +194,11 @@ input, textarea {
     border-radius: 8px;
     background: var(--bg-color);
     color: var(--text-color);
+    font-size: 1rem;
 }
 
 /* ========================================
-    6. ABOUT PAGE (Namespaced)
+    6. ABOUT PAGE (Namespaced - Protects Home)
    ======================================== */
 .about-container {
     max-width: 1100px;
@@ -240,7 +245,7 @@ input, textarea {
     7. MOBILE RESPONSIVENESS
    ======================================== */
 @media (max-width: 768px) {
-    /* Center Header Elements */
+    /* Header Stacking & Centering */
     .navbar-container {
         flex-direction: column;
         gap: 1.5rem;
@@ -256,12 +261,12 @@ input, textarea {
         justify-content: center;
     }
 
-    /* Slider Adjustments */
+    /* Slider Size Adjustment */
     .slider-container {
         height: 300px;
     }
 
-    /* Contact Form Adjustments */
+    /* Contact Form Width */
     #contact {
         width: 95%;
         padding: 2rem 1rem;
@@ -275,7 +280,7 @@ input, textarea {
     }
 
     .about-hero {
-        background-attachment: scroll; /* Fixes performance on mobile browsers */
+        background-attachment: scroll; /* Performance fix for mobile */
     }
 }
 
