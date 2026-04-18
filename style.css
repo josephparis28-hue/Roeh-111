@@ -178,6 +178,10 @@ body {
     }
 }
 
+/* Forces the reveal when the 'active-touch' class is added via JS */
+.slider-container.active-touch .img-after {
+    clip-path: inset(0 0 0 0);
+}
 
 
 .slider-container:hover .img-after {
