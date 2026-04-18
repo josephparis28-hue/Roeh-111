@@ -185,8 +185,19 @@ body {
 
 
 .slider-container:hover .img-after {
+    clip-path: inset(0 0 0 
+}
+
+.slider-container:hover .img-after {
     clip-path: inset(0 0 0 0);
 }
+
+/* mobile touch support */
+.slider-container:active .img-after,
+.slider-container:focus .img-after {
+    clip-path: inset(0 0 0 0);
+}
+
 
 .label {
     position: absolute;
