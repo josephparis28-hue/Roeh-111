@@ -5,8 +5,6 @@
     --accent-blue: #007bff;
     --transition-speed: 0.4s;
     --overlay: rgba(0, 0, 0, 0.5);
-    
-    /* Default Light Mode */
     --bg-color: #ffffff;
     --text-color: #333333;
     --card-bg: #f9f9f9;
@@ -33,12 +31,9 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    text-align: center; /* Global default for centering text */
+    text-align: center;
 }
 
-/* ========================================
-    2. NAVIGATION (CENTERED LINKS)
-   ======================================== */
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
     background-size: cover;
@@ -55,19 +50,8 @@ body {
     justify-content: space-between;
 }
 
-.logo, .theme-btn-wrapper {
-    flex: 1;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
+.logo, .theme-btn-wrapper { flex: 1; }
+.logo { display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.5rem; }
 .logo img { height: 40px; margin-left: 12px; }
 
 .nav-links {
@@ -78,25 +62,23 @@ body {
     gap: 2.5rem;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
+.nav-links a { text-decoration: none; color: white; font-weight: 500; transition: color 0.3s; }
 .nav-links a:hover { color: var(--accent-blue); }
 
-.theme-btn-wrapper {
-    display: flex;
-    justify-content: flex-end;
+.theme-btn-wrapper { display: flex; justify-content: flex-end; }
+.theme-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; }
+
+/* Indentation for Sub-page Bullet Points */
+.subpage-content ul {
+    margin-top: 1.5rem;
+    padding-left: 2.5rem; /* This provides the indentation */
+    text-align: left;     /* Ensures text stays aligned left even if body is centered */
+    list-style-position: outside; /* Keeps bullets aligned in a straight line */
 }
 
-.theme-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
+.subpage-content li {
+    margin-bottom: 0.8rem; /* Adds breathing room between points */
+    padding-left: 0.5rem;   /* Space between bullet and text */
 }
 
 /* ========================================
@@ -364,4 +346,20 @@ footer {
     font-size: 3rem;
     color: var(--accent-blue);
     margin-bottom: 1rem;
+}
+
+/* ========================================
+    8. NEW: SCROLL REVEAL (THE "GHOST" ENGINE)
+    This adds the interaction without breaking layouts.
+   ======================================== */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    will-change: transform, opacity;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
