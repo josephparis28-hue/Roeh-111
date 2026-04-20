@@ -103,7 +103,7 @@ body {
     3. HERO & ABOUT PAGE LAYOUT
    ======================================== */
 .about-hero {
-    height: 60vh;
+    height: 20vh;
     background: linear-gradient(var(--overlay), var(--overlay)), var(--about-hero-bg);
     background-size: cover;
     background-position: center;
@@ -315,4 +315,53 @@ footer {
     cursor: pointer;
     display: none;
     z-index: 100;
+}
+
+/* Scroll Reveal Effects */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SCROLL REVEAL ANIMATION --- */
+/* Sections start slightly lower and invisible */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    will-change: transform, opacity;
+}
+
+/* This class is added via JavaScript when the section enters the viewport */
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure the sub-page sections are globally styled to avoid inline CSS */
+.subpage-content {
+    max-width: 850px;
+    margin: 4rem auto;
+    padding: 2rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.subpage-header {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.subpage-header h1 {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
 }
