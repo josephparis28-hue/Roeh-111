@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Repair | Roeh 111</title>
+    
     <script>
-        // Execute immediately to prevent the white flash
         (function() {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
@@ -11,11 +14,8 @@
         })();
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Repair | Roeh 111</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.ico.png">
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico.png">
 </head>
 <body>
 
@@ -26,9 +26,9 @@
             <img src="../assets/images/favicon.ico.png" alt="Roeh Icon" style="height: 24px; width: 24px;">
         </a>
         <ul class="nav-links">
-            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="digital.html">Digital</a></li>
-            <li><a href="home-repair.html">Repair</a></li>
+            <li><a href="home-repair.html" class="active">Repair</a></li>
             <li><a href="life.html">Life</a></li>
         </ul>
         <div class="theme-btn-wrapper">
@@ -37,41 +37,39 @@
     </div>
 </nav>
 
-<section style="max-width: 800px; margin: 4rem auto; padding: 0 1rem;">
-    <h1 style="color: var(--accent-blue);">Home Restoration</h1>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Reliable restoration and maintenance for Pampa residents.</p>
-    
-    <div style="background: var(--card-bg); padding: 2rem; border-radius: 8px;">
-        <h3>Quality Home Services</h3>
-        <p>
-            Built on the Kingdom of Heaven discipline, 
-            our home repair services focus on trust and structural integrity. 
-            From minor repairs to major renovations, 
-            we treat your property with the same respect as we treat our home.
-        </p>
+<main>
+    <section style="max-width: 800px; margin: 4rem auto; padding: 0 1rem; text-align: center;">
+        <h1 style="color: var(--accent-blue);">Home Restoration</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Reliable restoration and maintenance for Pampa residents.</p>
         
-        <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
-            <li>General Home Maintenance</li>
-            <li>Home Repairs</li>
-            <li>Home Improvements</li>
-            <li>Home Remodeling</li>
-            <li>Emergency Repairs</li>
-            <li>Integrity-Based Consulting</li>
-            <li>Structural-Integrity Assessments</li>
-        </ul>
-    </div>
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 8px; text-align: left;">
+            <h3>Quality Home Services</h3>
+            <p>
+                From minor repairs to major renovations, our work focuses on trust 
+                and structural integrity in every home across the Texas Panhandle.
+            </p>
+            
+            <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                <li>General Home Maintenance</li>
+                <li>Property Upkeep</li>
+                <li>Restoration Projects</li>
+                <li>Renovation Projects</li>
+                <li>Remodel Projects</li>
+                <li>Emergency Repairs</li>
+                <li>Integrity-Based Consulting</li>
+            </ul>
+        </div>
 
-    <div class="cta-wrapper">
-        <a href="../index.html#contact" class="btn cta-btn">Connect with Roeh 111</a>
-    </div>
-</section>
+        <div class="cta-wrapper">
+            <a href="../index.html#contact" class="btn cta-btn">Connect with Roeh 111</a>
+        </div>
+    </section>
+</main>
 
 <footer>
     <p style="text-align: center; padding: 2rem; opacity: 0.7;">&copy; 2026 Roeh 111 | Pampa, Texas</p>
 </footer>
 
-<button id="backToTop" class="back-to-top" title="Go to top">↑</button>
 <script src="../script.js"></script>
-
 </body>
 </html>
