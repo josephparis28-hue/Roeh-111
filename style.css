@@ -36,9 +36,54 @@ html[data-theme="dark"] {
     }
 }
 
+/* Matching Link Colors to Card Themes in Dark Mode */
+html[data-theme="dark"] .digital-card .service-link { 
+        color: #3399ff; 
+}
+html[data-theme="dark"] .restore-card .service-link { 
+        color: #2ecc71; 
+}
+html[data-theme="dark"] .life-card .service-link { 
+        color: #f1c40f;
+}
+
 html[data-theme="dark"] .service-card a:hover {
     filter: brightness(5);
     text-decoration: underline;
+}
+
+/* --- Digital Page Theme --- */
+.digital-theme h1 {
+    color: #007bff; /* Standard Blue */
+}
+html[data-theme="dark"] .digital-theme h1 {
+    color: #3399ff; /* Brighter Blue for Dark Mode */
+}
+.digital-theme .cta-btn {
+    background-color: #007bff;
+}
+
+/* --- Restore Page Theme --- */
+.restore-theme h1 {
+    color: #28a745; /* Standard Green */
+}
+html[data-theme="dark"] .restore-theme h1 {
+    color: #2ecc71; /* Luminous Green for Dark Mode */
+}
+.restore-theme .cta-btn {
+    background-color: #28a745;
+}
+
+/* --- Life Page Theme --- */
+.life-theme h1 {
+    color: #ffc107; /* Standard Gold */
+}
+html[data-theme="dark"] .life-theme h1 {
+    color: #f1c40f; /* Luminous Gold for Dark Mode */
+}
+.life-theme .cta-btn {
+    background-color: #ffc107;
+    color: #000; /* Better contrast for gold buttons */
 }
 
 * {
@@ -326,21 +371,6 @@ footer {
     cursor: pointer;
     display: none;
     z-index: 100;
-}
-
-/* --- SCROLL REVEAL ANIMATION --- */
-/* Sections start slightly lower and invisible */
-.reveal-hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-    will-change: transform, opacity;
-}
-
-/* This class is added via JavaScript when the section enters the viewport */
-.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Ensure the sub-page sections are globally styled to avoid inline CSS */
