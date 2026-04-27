@@ -12,6 +12,67 @@
     --about-hero-bg: url('assets/images/PampaSkyline.jpg');
 }
 
+/* --- Global Theme Sync (Light Mode Default) --- */
+
+/* --- Light Mode: Service Card Themes --- */
+
+/* Digital Card - Blue */
+.digital-card {
+    border-top: 4px solid #007bff;
+    background: linear-gradient(180deg, rgba(0, 123, 255, 0.03) 0%, #f9f9f9 100%);
+}
+
+/* Restore Card - Green */
+.restore-card {
+    border-top: 4px solid #28a745;
+    background: linear-gradient(180deg, rgba(40, 167, 69, 0.03) 0%, #f9f9f9 100%);
+}
+
+/* Life Card - Gold */
+.life-card {
+    border-top: 4px solid #b8860b; /* Darker gold for better contrast on white */
+    background: linear-gradient(180deg, rgba(184, 134, 11, 0.03) 0%, #f9f9f9 100%);
+}
+
+/* Ensure the links within cards also match the theme in light mode */
+.digital-card .service-link { color: #007bff; font-weight: 600; }
+.restore-card .service-link { color: #28a745; font-weight: 600; }
+.life-card .service-link { color: #b8860b; font-weight: 600; }
+
+/* Digital Branch - Blue */
+.digital-theme .subpage-header h1 {
+    color: #007bff;
+}
+.digital-theme .cta-btn {
+    background-color: #007bff;
+    border: none;
+}
+
+/* Restore Branch - Green */
+.restore-theme .subpage-header h1 {
+    color: #28a745;
+}
+.restore-theme .cta-btn {
+    background-color: #28a745;
+    border: none;
+}
+
+/* Life Branch - Gold */
+.life-theme .subpage-header h1 {
+    color: #b8860b; /* Slightly darker gold for readability on white */
+}
+.life-theme .cta-btn {
+    background-color: #ffc107;
+    color: #000; /* Black text for better contrast on yellow button */
+    border: none;
+}
+
+/* --- Hover Effects for All Buttons --- */
+.cta-btn:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
 html[data-theme="dark"] {
     --bg-color: #1a1a1a;
@@ -35,6 +96,8 @@ html[data-theme="dark"] {
         background-color: #302e25;
     }
 }
+
+
 
 /* Matching Link Colors to Card Themes in Dark Mode */
 html[data-theme="dark"] .digital-card .service-link { 
