@@ -12,11 +12,33 @@
     --about-hero-bg: url('assets/images/PampaSkyline.jpg');
 }
 
+
 html[data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #f0f0f0;
     --card-bg: #2d2d2d;
     --overlay: rgba(0, 0, 0, 0.7);
+
+    /* Specific Card Colors for Dark Mode */
+    .digital-card {
+        border-top: 4px solid #3399ff; /* Brighter blue */
+        background-color: #252a30;    /* Slightly different tint */
+    }
+
+    .restore-card {
+        border-top: 4px solid #2ecc71; /* Restoration Green */
+        background-color: #253028;
+    }
+
+    .life-card {
+        border-top: 4px solid #f1c40f; /* Synchronization Gold */
+        background-color: #302e25;
+    }
+}
+
+html[data-theme="dark"] .service-card a:hover {
+    filter: brightness(5);
+    text-decoration: underline;
 }
 
 * {
@@ -65,6 +87,13 @@ body {
 .nav-links a { text-decoration: none; color: white; font-weight: 500; transition: color 0.3s; }
 .nav-links a:hover { color: var(--accent-blue); }
 
+/* Active Page State */
+.nav-links a.active {
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 4px;
+}
+
 .theme-btn-wrapper { display: flex; justify-content: flex-end; }
 .theme-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; }
 
@@ -82,7 +111,7 @@ body {
 }
 
 /* ========================================
-    3. HERO & ABOUT PAGE LAYOUT
+    2. HERO & ABOUT PAGE LAYOUT
    ======================================== */
 .about-hero {
     height: 20vh;
@@ -125,7 +154,7 @@ body {
 }
 
 /* ========================================
-    4. SERVICE CARDS (CENTERED)
+    3. SERVICE CARDS (CENTERED)
    ======================================== */
 .services-grid {
     display: flex;
@@ -151,7 +180,7 @@ body {
 .service-card:hover { transform: translateY(-5px); }
 
 /* ========================================
-    5. THE SLIDER (RELIABLE LAYERED VERSION)
+    4. THE SLIDER (RELIABLE LAYERED VERSION)
    ======================================== */
 .slider-container {
     position: relative;
@@ -209,7 +238,7 @@ body {
 .label-after { right: 20px; }
 
 /* ========================================
-    6. CONTACT FORM & PILL BUTTONS
+    5. CONTACT FORM & PILL BUTTONS
    ======================================== */
 #contact {
     max-width: 700px;
@@ -268,7 +297,7 @@ body {
 }
 
 /* ========================================
-    7. MOBILE RESPONSIVENESS
+    6. MOBILE RESPONSIVENESS
    ======================================== */
 @media (max-width: 768px) {
     .navbar-container { flex-direction: column; gap: 1.5rem; text-align: center; }
@@ -297,18 +326,6 @@ footer {
     cursor: pointer;
     display: none;
     z-index: 100;
-}
-
-/* Scroll Reveal Effects */
-.reveal-hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* --- SCROLL REVEAL ANIMATION --- */
@@ -349,7 +366,7 @@ footer {
 }
 
 /* ========================================
-    8. NEW: SCROLL REVEAL (THE "GHOST" ENGINE)
+    7. NEW: SCROLL REVEAL (THE "GHOST" ENGINE)
     This adds the interaction without breaking layouts.
    ======================================== */
 .reveal-hidden {
