@@ -1,8 +1,14 @@
 /* ========================================
-    1. CORE THEME & VARIABLES
+    1. CORE THEME & DESIGN TOKENS
    ======================================== */
 :root {
+    /* Brand Colors - Standard (Light Mode) */
     --accent-blue: #007bff;
+    --digital-blue: #007bff;
+    --restore-green: #28a745;
+    --life-gold: #b8860b; /* Darker gold for better contrast on white */
+
+    /* UI Tokens */
     --transition-speed: 0.4s;
     --overlay: rgba(0, 0, 0, 0.5);
     --bg-color: #ffffff;
@@ -12,143 +18,76 @@
     --about-hero-bg: url('assets/images/PampaSkyline.jpg');
 }
 
-/* --- Global Theme Sync (Light Mode Default) --- */
-
-/* --- Light Mode: Service Card Themes --- */
-
-/* Digital Card - Blue */
-.digital-card {
-    border-top: 4px solid #007bff;
-    background: linear-gradient(180deg, rgba(0, 123, 255, 0.03) 0%, #f9f9f9 100%);
-}
-
-/* Restore Card - Green */
-.restore-card {
-    border-top: 4px solid #28a745;
-    background: linear-gradient(180deg, rgba(40, 167, 69, 0.03) 0%, #f9f9f9 100%);
-}
-
-/* Life Card - Gold */
-.life-card {
-    border-top: 4px solid #b8860b; /* Darker gold for better contrast on white */
-    background: linear-gradient(180deg, rgba(184, 134, 11, 0.03) 0%, #f9f9f9 100%);
-}
-
-/* Ensure the links within cards also match the theme in light mode */
-.digital-card .service-link { color: #007bff; font-weight: 600; }
-.restore-card .service-link { color: #28a745; font-weight: 600; }
-.life-card .service-link { color: #b8860b; font-weight: 600; }
-
-/* Digital Branch - Blue */
-.digital-theme .subpage-header h1 {
-    color: #007bff;
-}
-.digital-theme .cta-btn {
-    background-color: #007bff;
-    border: none;
-}
-
-/* Restore Branch - Green */
-.restore-theme .subpage-header h1 {
-    color: #28a745;
-}
-.restore-theme .cta-btn {
-    background-color: #28a745;
-    border: none;
-}
-
-/* Life Branch - Gold */
-.life-theme .subpage-header h1 {
-    color: #b8860b; /* Slightly darker gold for readability on white */
-}
-.life-theme .cta-btn {
-    background-color: #ffc107;
-    color: #000; /* Black text for better contrast on yellow button */
-    border: none;
-}
-
-/* --- Hover Effects for All Buttons --- */
-.cta-btn:hover {
-    filter: brightness(0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
+/* --- Dark Mode Variables Overrides --- */
 html[data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #f0f0f0;
     --card-bg: #2d2d2d;
     --overlay: rgba(0, 0, 0, 0.7);
 
-    /* Specific Card Colors for Dark Mode */
-    .digital-card {
-        border-top: 4px solid #3399ff; /* Brighter blue */
-        background-color: #252a30;    /* Slightly different tint */
-    }
-
-    .restore-card {
-        border-top: 4px solid #2ecc71; /* Restoration Green */
-        background-color: #253028;
-    }
-
-    .life-card {
-        border-top: 4px solid #f1c40f; /* Synchronization Gold */
-        background-color: #302e25;
-    }
+    /* Dark Mode Brand Enhancements (Brighter for dark backgrounds) */
+    --digital-blue: #3399ff;
+    --restore-green: #2ecc71;
+    --life-gold: #f1c40f;
 }
 
+/* ========================================
+    2. HERO & ABOUT PAGE LAYOUT
+   ======================================== */
 
-
-/* Matching Link Colors to Card Themes in Dark Mode */
-html[data-theme="dark"] .digital-card .service-link { 
-        color: #3399ff; 
-}
-html[data-theme="dark"] .restore-card .service-link { 
-        color: #2ecc71; 
-}
-html[data-theme="dark"] .life-card .service-link { 
-        color: #f1c40f;
-}
-
-html[data-theme="dark"] .service-card a:hover {
-    filter: brightness(5);
-    text-decoration: underline;
-}
-
-/* --- Digital Page Theme --- */
-.digital-theme h1 {
-    color: #007bff; /* Standard Blue */
-}
-html[data-theme="dark"] .digital-theme h1 {
-    color: #3399ff; /* Brighter Blue for Dark Mode */
-}
-.digital-theme .cta-btn {
-    background-color: #007bff;
+/* The top banner section of the About page */
+.about-hero {
+    height: 35vh; /* Adjusted for better visibility */
+    background: linear-gradient(var(--overlay), var(--overlay)), var(--about-hero-bg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    color: white;
+    padding: 0 1rem;
 }
 
-/* --- Restore Page Theme --- */
-.restore-theme h1 {
-    color: #28a745; /* Standard Green */
-}
-html[data-theme="dark"] .restore-theme h1 {
-    color: #2ecc71; /* Luminous Green for Dark Mode */
-}
-.restore-theme .cta-btn {
-    background-color: #28a745;
+.about-hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 1rem; 
 }
 
-/* --- Life Page Theme --- */
-.life-theme h1 {
-    color: #ffc107; /* Standard Gold */
-}
-html[data-theme="dark"] .life-theme h1 {
-    color: #f1c40f; /* Luminous Gold for Dark Mode */
-}
-.life-theme .cta-btn {
-    background-color: #ffc107;
-    color: #000; /* Better contrast for gold buttons */
+/* Global Centering for About Content sections */
+.pillars-wrapper, 
+.pampa-brand-section, 
+.cta-section {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
 }
 
+/* The "Started in Pampa" gray box section */
+.pampa-brand-section {
+    background-color: var(--card-bg);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 1rem; 
+}
+
+.pampa-brand-content p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+/* The section that says "Ready to start a project?" */
+.cta-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+    3. GLOBAL STYLES
+   ======================================== */
 * {
     margin: 0;
     padding: 0;
@@ -164,6 +103,9 @@ body {
     text-align: center;
 }
 
+/* ========================================
+    4. NAVIGATION (CENTRALIZED FLEXBOX)
+   ======================================== */
 .navbar {
     background: linear-gradient(var(--overlay), var(--overlay)), var(--header-bg);
     background-size: cover;
@@ -181,7 +123,16 @@ body {
 }
 
 .logo, .theme-btn-wrapper { flex: 1; }
-.logo { display: flex; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 1.5rem; }
+
+.logo { 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold; 
+    font-size: 1.5rem; 
+}
+
 .logo img { height: 40px; margin-left: 12px; }
 
 .nav-links {
@@ -192,77 +143,24 @@ body {
     gap: 2.5rem;
 }
 
-.nav-links a { text-decoration: none; color: white; font-weight: 500; transition: color 0.3s; }
-.nav-links a:hover { color: var(--accent-blue); }
-
-/* Active Page State */
-.nav-links a.active {
-    color: var(--accent-blue);
-    border-bottom: 2px solid var(--accent-blue);
+.nav-links a { 
+    text-decoration: none; 
+    color: white; 
+    font-weight: 500; 
+    transition: color 0.3s; 
     padding-bottom: 4px;
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: var(--accent-blue); 
+    border-bottom: 2px solid var(--accent-blue); 
 }
 
 .theme-btn-wrapper { display: flex; justify-content: flex-end; }
 .theme-btn { background: none; border: none; cursor: pointer; font-size: 1.5rem; }
 
-/* Indentation for Sub-page Bullet Points */
-.subpage-content ul {
-    margin-top: 1.5rem;
-    padding-left: 2.5rem; /* This provides the indentation */
-    text-align: left;     /* Ensures text stays aligned left even if body is centered */
-    list-style-position: outside; /* Keeps bullets aligned in a straight line */
-}
-
-.subpage-content li {
-    margin-bottom: 0.8rem; /* Adds breathing room between points */
-    padding-left: 0.5rem;   /* Space between bullet and text */
-}
-
 /* ========================================
-    2. HERO & ABOUT PAGE LAYOUT
-   ======================================== */
-.about-hero {
-    height: 20vh;
-    background: linear-gradient(var(--overlay), var(--overlay)), var(--about-hero-bg);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    padding: 0 1rem;
-}
-
-.about-hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-
-/* Global Centering for About Content */
-.pillars-wrapper, 
-.pampa-brand-section, 
-.cta-section {
-    padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-}
-
-.center-title { font-size: 2.5rem; margin-bottom: 3rem; }
-
-.pampa-brand-section {
-    background-color: var(--card-bg);
-    border-top: 1px solid rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.pampa-brand-content p {
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 1.2rem;
-}
-
-/* ========================================
-    3. SERVICE CARDS (CENTERED)
+    5. SERVICE CARD THEMES (SYNCHRONIZED)
    ======================================== */
 .services-grid {
     display: flex;
@@ -270,8 +168,8 @@ body {
     justify-content: center;
     gap: 2rem;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    margin: 3rem auto;
+    padding: 0 1rem;
 }
 
 .service-card {
@@ -280,16 +178,67 @@ body {
     background: var(--card-bg);
     padding: 2.5rem;
     border-radius: 15px;
-    text-align: center;
+    transition: transform 0.3s ease;
     border: 1px solid rgba(0,0,0,0.05);
-    transition: transform 0.3s;
 }
 
 .service-card:hover { transform: translateY(-5px); }
 
+/* --- Branch Specific logic using Variable Tokens --- */
+.digital-card { border-top: 4px solid var(--digital-blue); }
+.restore-card { border-top: 4px solid var(--restore-green); }
+.life-card { border-top: 4px solid var(--life-gold); }
+
+.digital-card .service-link { color: var(--digital-blue); font-weight: 600; }
+.restore-card .service-link { color: var(--restore-green); font-weight: 600; }
+.life-card .service-link { color: var(--life-gold); font-weight: 600; }
+
 /* ========================================
-    4. THE SLIDER (RELIABLE LAYERED VERSION)
+    6. SUB-PAGE DESIGN SYSTEM
    ======================================== */
+.subpage-header { text-align: center; margin-top: 5rem; padding: 0 1rem; }
+.subpage-header h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+/* Sub-page Color Sync */
+.digital-theme .subpage-header h1 { color: var(--digital-blue); }
+.restore-theme .subpage-header h1 { color: var(--restore-green); }
+.life-theme .subpage-header h1 { color: var(--life-gold); }
+
+.subpage-content {
+    max-width: 850px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.subpage-content ul {
+    margin-top: 1.5rem;
+    padding-left: 2rem;
+}
+
+.subpage-content li { margin-bottom: 0.8rem; }
+
+/* ========================================
+    7. INTERACTIVE COMPONENTS (SLIDER & GHOST)
+   ======================================== */
+
+/* Ghost Engine: Scroll Reveal */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    will-change: transform, opacity;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Restoration Comparison Slider */
 .slider-container {
     position: relative;
     width: 100%;
@@ -299,14 +248,6 @@ body {
     overflow: hidden;
     border-radius: 12px;
     cursor: pointer;
-    isolation: isolate;
-}
-
-.img-before {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
 }
 
 .img-after {
@@ -318,158 +259,85 @@ body {
     z-index: 2;
     clip-path: inset(0 0 0 100%);
     transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
 }
 
 .slider-container:hover .img-after,
 .slider-container[data-state="after"] .img-after {
-    clip-path: inset(0 0 0 0) !important;
+    clip-path: inset(0 0 0 0);
 }
 
-.slider-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.label {
-    position: absolute;
-    bottom: 20px;
-    padding: 8px 16px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    font-weight: bold;
-    z-index: 10;
-}
-.label-before { left: 20px; }
-.label-after { right: 20px; }
+.slider-container img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ========================================
-    5. CONTACT FORM & PILL BUTTONS
+    8. FORMS & BUTTONS
    ======================================== */
 #contact {
     max-width: 700px;
     margin: 5rem auto;
-    padding: 3.5rem 2.5rem;
+    padding: 3rem;
     background: var(--card-bg);
     border-radius: 15px;
-    text-align: left; /* Keep form internal labels left-aligned */
 }
 
-#contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-#contact .form-group {
+#contact input, #contact select, #contact textarea {
     width: 100%;
-    margin-bottom: 1.5rem;
-}
-
-#contact input, 
-#contact select, 
-#contact textarea {
-    width: 100%;
-    display: block;
     padding: 14px;
+    margin-bottom: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     background: var(--bg-color);
     color: var(--text-color);
-    font-size: 1rem;
 }
 
-/* Unified Large Pill Button Style */
-#contact .btn, .cta-btn {
-    display: block;
-    width: 60%;
+/* Large Pill Buttons */
+.btn, .cta-btn {
+    display: inline-block;
     min-width: 250px;
-    margin: 1.5rem auto 0;
     padding: 18px 30px;
-    font-size: 1.1rem;
     background-color: var(--accent-blue);
     color: white;
-    border: none;
     border-radius: 50px;
     font-weight: bold;
-    cursor: pointer;
     text-decoration: none;
-    text-align: center;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-#contact .btn:hover, .cta-btn:hover {
+/* Branch specific CTA button colors */
+.digital-theme .cta-btn { background-color: var(--digital-blue); }
+.restore-theme .cta-btn { background-color: var(--restore-green); }
+.life-theme .cta-btn { background-color: var(--life-gold); color: #000; }
+
+.btn:hover, .cta-btn:hover {
     transform: translateY(-2px);
     filter: brightness(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* ========================================
-    6. MOBILE RESPONSIVENESS
+    9. FOOTER & MOBILE
    ======================================== */
 @media (max-width: 768px) {
-    .navbar-container { flex-direction: column; gap: 1.5rem; text-align: center; }
-    .nav-links { flex: none; gap: 1.5rem; }
-    .logo, .theme-btn-wrapper { flex: none; justify-content: center; }
+    .navbar-container { flex-direction: column; gap: 1.5rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; }
     .slider-container { height: 320px; }
-    .about-hero h1 { font-size: 2.5rem; }
-    #contact .btn, .cta-btn { width: 100%; }
+    .subpage-header h1 { font-size: 2.2rem; }
+    .btn, .cta-btn { width: 100%; }
 }
 
-footer {
-    padding: 3rem 1rem;
-    opacity: 0.7;
-    text-align: center;
-}
+footer { padding: 4rem 1rem; opacity: 0.7; text-align: center; }
 
 .back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     background: var(--accent-blue);
     color: white;
     border: none;
-    padding: 12px 16px;
+    padding: 15px;
     border-radius: 50%;
     cursor: pointer;
     display: none;
     z-index: 100;
-}
-
-/* Ensure the sub-page sections are globally styled to avoid inline CSS */
-.subpage-content {
-    max-width: 850px;
-    margin: 4rem auto;
-    padding: 2rem 1.5rem;
-    background: var(--card-bg);
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.subpage-header {
-    text-align: center;
-    margin-top: 5rem;
-}
-
-.subpage-header h1 {
-    font-size: 3rem;
-    color: var(--accent-blue);
-    margin-bottom: 1rem;
-}
-
-/* ========================================
-    7. NEW: SCROLL REVEAL (THE "GHOST" ENGINE)
-    This adds the interaction without breaking layouts.
-   ======================================== */
-.reveal-hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-    will-change: transform, opacity;
-}
-
-.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
 }

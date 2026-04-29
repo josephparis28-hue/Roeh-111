@@ -11,7 +11,7 @@
 ## 2. Core Mission
 
 * **Local Restoration:** Providing Pampa and Gray County with reliable home repair and maintenance services.
-* **Digital Excellence:** Building SEO-optimized, responsive websites for local businesses.
+* **Digital Excellence:** Building SEO-optimized that are responsive websites.
 * **Kingdom Solutions:** Offering consultation for alignment and synchronization powered by the Holy Spirit.
 
 ## 3. Technical Stack & Tools
@@ -34,6 +34,7 @@
 
 Visit the fully functional site here:  
 **[Roeh 111 Live Site](https://josephparis28-hue.github.io/Roeh-111/)**
+**[GitHub Repository](https://github.com/josephparis28-hue/Roeh-111)**
 
 ## 6. Project Directory
 
