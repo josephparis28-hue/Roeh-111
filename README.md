@@ -21,4 +21,4 @@ This project exists to bridge the gap between technical web development and hand
 
 * **Visual Studio Code:** Primary IDE for coding and local testing.
 * **GitHub Desktop:** Used for version control and managing deployment cycles.
-* **CSS Variables:** For dynamic theme management and visual consistency.
+* **CSS Variables:** For dynamic theme management and visual consistency
