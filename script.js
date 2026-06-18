@@ -90,3 +90,16 @@ if (backToTopBtn) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+cconst contactForm = document.getElementById("contactForm");
+const successModal = document.getElementById("successModal");
+const closeModal = document.getElementById("closeModal");
+
+contactForm.addEventListener("submit", () => {
+  console.log("Contact form submitted!");
+  successModal.classList.add("show");
+});
+
+closeModal.addEventListener("click", () => {
+  successModal.classList.remove("show");
+});

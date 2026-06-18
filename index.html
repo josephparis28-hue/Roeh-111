@@ -75,24 +75,41 @@
         </div>
     </section>
 
-    <section id="contact">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Connect with Roeh 111</h2>
-        <form action="https://formspree.io/f/mvzdoyww" method="POST">
-            <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
-            <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
-            <div class="form-group">
-                <select name="service_interest">
-                    <option value="" disabled selected>Select a Service</option>
-                    <option value="digital">Digital Development</option>
-                    <option value="repair">Home Restoration</option>
-                    <option value="life">Life Consultation</option>
-                </select>
-            </div>
-            <div class="form-group"><textarea name="message" placeholder="How can we serve you today?" required></textarea></div>
-            <input type="hidden" name="_next" value="https://josephparis28-hue.github.io/Roeh-111/pages/thank-you.html">
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+            <p>If you’d like to reach out, send me a message using the form below.</p>
+
+        <form action="https://formsubmit.co/Josephparis28@gmail.com" method="POST" class="contact-form" id="contactForm">
+
+        <!-- Hidden FormSubmit Settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="New Message From Portfolio Website">
+        <input type="hidden" name="_next" value="https://josephparis28-hue.github.io/thank-you.html">
+
+        <!-- Visible Fields -->
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="contact-btn">Send Message</button>
+    </form>
     </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content fade-in">
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I’ll get back to you soon.</p>
+        <button id="closeModal" class="contact-btn">Close</button>
+        </div>
+    </div>
+
 </main>
 
 <footer>
