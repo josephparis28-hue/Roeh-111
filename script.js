@@ -91,7 +91,7 @@ if (backToTopBtn) {
     });
 }
 
-cconst contactForm = document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
 const successModal = document.getElementById("successModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -103,3 +103,4 @@ contactForm.addEventListener("submit", () => {
 closeModal.addEventListener("click", () => {
   successModal.classList.remove("show");
 });
+
