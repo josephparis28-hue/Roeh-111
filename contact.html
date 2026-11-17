@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="#0A2540" name="theme-color">
+  <meta content="Start an inquiry with ROEH 111 Digital, Restore, or Life." name="description">
+  <meta content="Contact ROEH 111" property="og:title">
+  <meta content="Start an inquiry with ROEH 111 Digital, Restore, or Life." property="og:description">
+  <meta content="website" property="og:type">
+  <title>
+   Contact ROEH 111 | ROEH 111
+  </title>
+  <link href="assets/roeh-mark.svg" rel="icon" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script defer src="config.js">
+  </script>
+  <script defer src="script.js">
+  </script>
+ </head>
+ <body data-branch="all">
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="site-header">
+   <div class="container header-inner">
+    <a aria-label="ROEH 111, go to homepage" class="brand" href="index.html">
+     <img alt height="43" src="assets/roeh-mark.svg" width="43">
+     <span>
+      ROEH
+      <strong>
+       111
+      </strong>
+     </span>
+    </a>
+    <button aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu" class="nav-toggle" type="button">
+     <span>
+     </span>
+     <span>
+     </span>
+     <span>
+     </span>
+    </button>
+    <nav aria-label="Primary navigation" class="primary-nav" id="primary-nav">
+     <a href="index.html">
+      Home
+     </a>
+     <a href="digital.html">
+      Digital
+     </a>
+     <a href="restore.html">
+      Restore
+     </a>
+     <a href="life.html">
+      Life
+     </a>
+     <a href="pricing.html">
+      Pricing
+     </a>
+     <a href="work.html">
+      Our work
+     </a>
+     <a href="about.html">
+      About
+     </a>
+     <a class="nav-contact" href="contact.html">
+      Get started
+      <span aria-hidden="true">
+       &nearrow;
+      </span>
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="main">
+   <section class="subhero contact-hero">
+    <div class="container">
+     <span class="eyebrow">
+      <i>
+      </i>
+      LET&rsquo;S CONNECT
+     </span>
+     <h1>
+      Start with the
+      <em>
+       right conversation.
+      </em>
+     </h1>
+     <p>
+      Choose a service division and tell us enough to recommend the next step.
+     </p>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container contact-layout">
+     <div>
+      <span class="eyebrow dark">
+       GET STARTED
+      </span>
+      <h2>
+       One form. Three clear paths.
+      </h2>
+      <p>
+       We ask only for the information needed to understand your request. Selecting a division reveals more relevant questions.
+      </p>
+      <div class="contact-points">
+       <div>
+        <span>
+         01
+        </span>
+        <p>
+         <strong>
+          Tell us what you need.
+         </strong>
+         <br>
+         Choose Digital, Restore, or Life.
+        </p>
+       </div>
+       <div>
+        <span>
+         02
+        </span>
+        <p>
+         <strong>
+          We review feasibility.
+         </strong>
+         <br>
+         Service areas, timelines, and scope are confirmed individually.
+        </p>
+       </div>
+       <div>
+        <span>
+         03
+        </span>
+        <p>
+         <strong>
+          Agree on next steps.
+         </strong>
+         <br>
+         Written quotes and paid work follow verification and agreement.
+        </p>
+       </div>
+      </div>
+      <div class="notice">
+       <strong>
+        Important:
+       </strong>
+       This form is configured to submit your inquiry using Formspree. Before relying on it for business requests,
+       the site owner should verify successful delivery in the Formspree dashboard and destination inbox.
+       Please review our
+       <a href="privacy.html">privacy information</a>
+       before submitting.
+      </div>
+     </div>
+     <div class="form-shell">
+      <form id="inquiry-form" action="https://formspree.io/f/xvkaawre" method="POST">
+       <input id="subject-field" name="subject" type="hidden" value="ROEH 111 — New inquiry">
+       <h3>
+        Your inquiry
+       </h3>
+       <p id="form-intro">
+        Complete the fields below. Required information is marked.
+       </p>
+       <div class="form-grid">
+        <div class="field">
+         <label for="full-name">
+          Full name
+          <span class="required">
+           *
+          </span>
+         </label>
+         <input autocomplete="name" id="full-name" maxlength="120" name="fullName" required>
+        </div>
+        <div class="field">
+         <label for="email">
+          Email
+          <span class="required">
+           *
+          </span>
+         </label>
+         <input autocomplete="email" id="email" maxlength="200" name="email" required type="email">
+        </div>
+       </div>
+       <div class="field">
+        <label for="division">
+         Which division can help?
+         <span class="required">
+          *
+         </span>
+        </label>
+        <select id="division" name="division" required>
+         <option value>
+          Select a division
+         </option>
+         <option value="Digital">
+          Digital &mdash; website or technology
+         </option>
+         <option value="Restore">
+          Restore &mdash; property services
+         </option>
+         <option value="Life">
+          Life &mdash; resources or conversation
+         </option>
+        </select>
+       </div>
+       <div class="field branch-specific" data-visible-for="Digital" hidden>
+        <label for="project-type">
+         Digital project type
+        </label>
+        <select id="project-type" name="projectType">
+         <option value>
+          Not sure yet
+         </option>
+         <option>
+          Launch
+         </option>
+         <option>
+          Establish
+         </option>
+         <option>
+          Elevate
+         </option>
+         <option>
+          Care plan
+         </option>
+         <option>
+          Custom project
+         </option>
+        </select>
+       </div>
+       <div class="form-grid branch-specific" data-visible-for="Restore" hidden>
+        <div class="field">
+         <label for="project-location">
+          Property city / ZIP
+         </label>
+         <input id="project-location" maxlength="120" name="propertyLocation" placeholder="City or ZIP">
+        </div>
+        <div class="field">
+         <label for="property-type">
+          Property type
+         </label>
+         <select id="property-type" name="propertyType">
+          <option value>
+           Select
+          </option>
+          <option>
+           Home
+          </option>
+          <option>
+           Rental property
+          </option>
+          <option>
+           Small business property
+          </option>
+          <option>
+           Other
+          </option>
+         </select>
+        </div>
+       </div>
+       <div class="field branch-specific" data-visible-for="Life" hidden>
+        <label for="life-topic">
+         Topic of interest
+        </label>
+        <select id="life-topic" name="lifeTopic">
+         <option value>
+          Choose an option
+         </option>
+         <option>
+          Faith resources
+         </option>
+         <option>
+          Reflection prompts
+         </option>
+         <option>
+          Conversation availability
+         </option>
+         <option>
+          Other
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="timeline">
+         When are you hoping to begin?
+        </label>
+        <select id="timeline" name="timeline">
+         <option value>
+          Flexible / not sure
+         </option>
+         <option>
+          As soon as available
+         </option>
+         <option>
+          Within one month
+         </option>
+         <option>
+          Within three months
+         </option>
+         <option>
+          Just researching
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label for="details">
+         Tell us about your goals
+         <span class="required">
+          *
+         </span>
+        </label>
+        <textarea id="details" maxlength="3000" minlength="10" name="details" placeholder="What would success look like for you?" required rows="5"></textarea>
+       </div>
+       <div aria-hidden="true" class="hidden-honeypot">
+        <label for="website-check">
+         Leave this field empty
+        </label>
+        <input autocomplete="off" id="website-check" name="_gotcha" tabindex="-1">
+       </div>
+       <div class="form-actions">
+        <button class="button button-teal" id="submit-btn" type="submit">
+         Send inquiry &nearrow;
+        </button>
+        <p class="fine-print">
+         No payment is collected here. Do not include sensitive personal, medical, financial, or security information.
+        </p>
+       </div>
+       <div aria-live="polite" class="form-status" id="form-status" role="status">
+       </div>
+       <div class="prepared" hidden id="prepared-area">
+        <label for="prepared-text">
+         Copy your prepared request
+        </label>
+        <textarea id="prepared-text" readonly rows="10"></textarea>
+        <button class="button button-outline" id="copy-request" type="button">
+         Copy message
+        </button>
+        <a class="button button-outline" hidden id="email-request">
+         Open email app &nearrow;
+        </a>
+       </div>
+      </form>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-grid">
+    <div>
+     <a aria-label="ROEH 111 homepage" class="brand footer-brand" href="index.html">
+      <img alt height="43" src="assets/roeh-mark-light.svg" width="43">
+      <span>
+       ROEH
+       <strong>
+        111
+       </strong>
+      </span>
+     </a>
+     <p>
+      Practical solutions for technology, property, and life.
+     </p>
+     <small>
+      Simple. Accessible. Professional.
+     </small>
+    </div>
+    <div>
+     <h2>
+      Explore
+     </h2>
+     <a href="digital.html">
+      Digital services
+     </a>
+     <a href="restore.html">
+      Restore services
+     </a>
+     <a href="life.html">
+      Life resources
+     </a>
+     <a href="pricing.html">
+      Pricing guide
+     </a>
+    </div>
+    <div>
+     <h2>
+      Company
+     </h2>
+     <a href="about.html">
+      About
+     </a>
+     <a href="work.html">
+      Our work
+     </a>
+     <a href="contact.html">
+      Contact
+     </a>
+     <a href="privacy.html">
+      Privacy
+     </a>
+    </div>
+    <div>
+     <h2>
+      Start here
+     </h2>
+     <p>
+      Tell us what you're trying to accomplish. Choose the right division and share your goals.
+     </p>
+     <a class="button button-teal" href="contact.html">
+      Start a conversation &nearrow;
+     </a>
+    </div>
+   </div>
+   <div class="container footer-bottom">
+    <span>
+     &copy;
+     <span id="copyright-year">
+      2026
+     </span>
+     ROEH 111. All rights reserved.
+    </span>
+    <span>
+     Service availability and final pricing are confirmed by written agreement.
+    </span>
+   </div>
+  </footer>
+ </body>
+</html>
+

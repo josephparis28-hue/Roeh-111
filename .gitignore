@@ -1,0 +1,7 @@
+# Local OS/editor artifacts
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.cache/
+dist/
