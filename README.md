@@ -9,9 +9,6 @@
 
 ```text
 ROEH111-VSCode/
-├── .vscode/
-│   ├── extensions.json        # Optional VS Code extensions
-│   └── settings.json          # Editor formatting preferences
 ├── assets/                    # ROEH 111 logos and visual assets
 ├── docs/                      # Business/pricing planning references
 ├── index.html                 # Home
