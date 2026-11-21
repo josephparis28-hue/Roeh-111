@@ -189,4 +189,4 @@ The interactive price estimates are **illustrative only**, not binding quotes. T
 
 ---
 
-**ROEH 111** — *Simple. Accessible. Professional.*
+**ROEH 111** — *Practical.Dependable.Professional.*
