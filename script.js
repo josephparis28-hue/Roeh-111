@@ -35,7 +35,7 @@
     const el = $('#restore-hours'); if (!el) return;
     const hours = Math.max(0, Math.min(100, Number(el.value) || 0));
     const materials = Math.max(0, Math.min(100000, Number($('#restore-material')?.value) || 0));
-    $('#restore-total').textContent = money(Math.max(149, 95 * hours) + materials * 1.15);
+    $('#restore-total').textContent = money(Math.max(149, 85 * hours) + materials * 1.15);
   };
   [$('#restore-hours'), $('#restore-material')].filter(Boolean).forEach(el => el.addEventListener('input', updateRestore));
   updateRestore();
